@@ -1182,7 +1182,7 @@
 
 <body>
   <!-- ============================================
-  PRELOADER — Blue & Lime Theme
+  PRELOADER — Blue & Lime Theme (Minimum 1.5 seconds)
   ============================================ -->
   <div id="preloader">
     <div class="loader"></div>
@@ -1441,20 +1441,37 @@
 
   <script>
     // ============================================
-    // PRELOADER
+    // PRELOADER — Minimum 1.5 seconds
     // ============================================
     window.addEventListener('load', function() {
       const preloader = document.getElementById('preloader');
       const body = document.body;
 
-      setTimeout(function() {
+      // Get the time when loading started
+      const startTime = performance.now();
+
+      // Function to hide preloader
+      function hidePreloader() {
         preloader.classList.add('hidden');
         body.classList.add('loaded');
 
         setTimeout(function() {
           preloader.style.display = 'none';
         }, 700);
-      }, 800);
+      }
+
+      // Calculate elapsed time and wait if needed
+      const elapsed = performance.now() - startTime;
+      const minDisplayTime = 1500; // 1.5 seconds minimum
+
+      if (elapsed >= minDisplayTime) {
+        // If page loaded after 1.5s, hide immediately
+        hidePreloader();
+      } else {
+        // If page loaded before 1.5s, wait remaining time
+        const remainingTime = minDisplayTime - elapsed;
+        setTimeout(hidePreloader, remainingTime);
+      }
     });
 
     // ============================================

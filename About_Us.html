@@ -1,0 +1,1016 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About the College — FG Liaquat Ali Degree College</title>
+  <meta name="description" content="Learn about the history, mission, and vision of FG Liaquat Ali Degree College, Rawalpindi.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+       ROOT VARIABLES
+    ============================================ */
+    :root {
+      --primary: #5B5FEF;
+      --primary-dark: #3538A8;
+      --cyan: #22D3EE;
+      --lime: #B8F34A;
+      --lavender: #E9E7FF;
+      --bg: #F8F9FC;
+      --surface: #FFFFFF;
+      --text: #171821;
+      --muted: #626878;
+      --border: #E5E7EF;
+      --shadow: 0 18px 50px rgba(35, 38, 80, .10);
+      --shadow-lg: 0 24px 60px rgba(35, 38, 80, .15);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: var(--text);
+      background: var(--bg);
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.7;
+      transition: background .3s ease, color .3s ease;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* ============================================
+       ANNOUNCEMENT BAR
+    ============================================ */
+    .announcement {
+      background: #171821;
+      color: #fff;
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 13px;
+    }
+    .announcement-track {
+      display: flex;
+      gap: 38px;
+      width: max-content;
+      padding: 9px 0;
+      animation: scrollNews 28s linear infinite;
+    }
+    .announcement strong {
+      color: var(--lime);
+    }
+    @keyframes scrollNews {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-35%);
+      }
+    }
+
+    /* ============================================
+       HEADER
+    ============================================ */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 249, 252, .92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(229, 231, 239, .8);
+      transition: background .3s ease, border-color .3s ease;
+    }
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 245px;
+    }
+    .brand img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid var(--border);
+    }
+    .brand-text {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      line-height: 1.05;
+    }
+    .brand-text span {
+      display: block;
+      font: 500 10px Inter, sans-serif;
+      color: var(--muted);
+      margin-top: 4px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    nav a {
+      padding: 10px 13px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #454957;
+      transition: .2s ease;
+    }
+    nav a:hover,
+    nav a.active {
+      background: var(--lavender);
+      color: var(--primary-dark);
+    }
+    .login {
+      background: var(--primary);
+      color: #fff !important;
+      padding: 11px 17px !important;
+      box-shadow: 0 8px 20px rgba(91, 95, 239, .25);
+    }
+    .login:hover {
+      background: var(--primary-dark) !important;
+      color: #fff !important;
+    }
+    .menu {
+      display: none;
+      border: 0;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    /* ============================================
+       PAGE HERO
+    ============================================ */
+    .page-hero {
+      padding: 60px 0 40px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--lavender) 0%, rgba(91, 95, 239, 0.05) 100%);
+    }
+    .page-hero:before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: rgba(91, 95, 239, 0.04);
+      right: -200px;
+      top: -200px;
+      z-index: 0;
+    }
+    .page-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    .page-hero .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      color: var(--primary-dark);
+      box-shadow: 0 8px 24px rgba(20, 20, 50, .05);
+    }
+    .page-hero .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--lime);
+      border-radius: 50%;
+    }
+    .page-hero h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(40px, 5vw, 62px);
+      line-height: 1.02;
+      letter-spacing: -.04em;
+      margin: 18px 0 12px;
+      max-width: 750px;
+    }
+    .page-hero h1 em {
+      font-style: normal;
+      color: var(--primary);
+    }
+    .page-hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 640px;
+    }
+
+    /* ============================================
+       BREADCRUMB
+    ============================================ */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+    .breadcrumb a {
+      color: var(--primary);
+      font-weight: 600;
+    }
+    .breadcrumb a:hover {
+      color: var(--primary-dark);
+    }
+    .breadcrumb .sep {
+      opacity: 0.4;
+    }
+
+    /* ============================================
+       CONTENT SECTION
+    ============================================ */
+    .content-section {
+      padding: 48px 0 64px;
+    }
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .content-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 40px 44px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: .25s ease;
+    }
+    .content-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-3px);
+    }
+
+    .content-card h2 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+    .content-card h2 .highlight {
+      color: var(--primary);
+    }
+
+    .content-card p {
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 18px;
+      line-height: 1.8;
+    }
+    .content-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .content-card .pill {
+      display: inline-block;
+      background: var(--lavender);
+      color: var(--primary-dark);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      padding: 4px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    /* ============================================
+       MISSION / VISION LIST
+    ============================================ */
+    .values-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .value-item {
+      background: var(--bg);
+      border-radius: 16px;
+      padding: 20px 24px;
+      border: 1px solid var(--border);
+      transition: .2s ease;
+    }
+    .value-item:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+    .value-item .num {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .value-item p {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ============================================
+       TIMELINE / MILESTONES
+    ============================================ */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .timeline-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 16px 20px;
+      background: var(--bg);
+      border-radius: 14px;
+      border-left: 4px solid var(--primary);
+    }
+    .timeline-item .year {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--primary);
+      min-width: 70px;
+    }
+    .timeline-item p {
+      margin: 0;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    /* ============================================
+       STATS SECTION
+    ============================================ */
+    .stats-mini {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 32px 0 0;
+    }
+    .stats-mini .stat {
+      background: var(--bg);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+    .stats-mini .stat h4 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .stats-mini .stat p {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 2px 0 0;
+    }
+
+    /* ============================================
+       CTA BANNER
+    ============================================ */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: #fff;
+      border-radius: 30px;
+      padding: 40px 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      box-shadow: 0 20px 50px rgba(53, 56, 168, .25);
+      margin-top: 16px;
+    }
+    .cta-banner h2 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0;
+    }
+    .cta-banner p {
+      margin: 8px 0 0;
+      color: #dfe0ff;
+      max-width: 520px;
+    }
+    .btn-lime {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 50px;
+      padding: 0 28px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 14px;
+      border: 0;
+      cursor: pointer;
+      background: var(--lime);
+      color: #171821;
+      transition: .2s ease;
+      flex-shrink: 0;
+    }
+    .btn-lime:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(184, 243, 74, .3);
+    }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    footer {
+      background: #111217;
+      color: #fff;
+      padding: 55px 0 25px;
+      margin-top: 16px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 35px;
+    }
+    footer h3 {
+      font: 700 17px "Space Grotesk";
+      margin: 0 0 15px;
+    }
+    footer p,
+    footer a {
+      font-size: 13px;
+      color: #aeb1be;
+    }
+    footer a {
+      display: block;
+      margin: 8px 0;
+    }
+    footer a:hover {
+      color: #fff;
+    }
+    .footer-brand {
+      font: 700 22px "Space Grotesk";
+      margin-bottom: 10px;
+    }
+    .footer-bottom {
+      border-top: 1px solid #2b2c34;
+      margin-top: 38px;
+      padding-top: 18px;
+      color: #747783;
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    /* ============================================
+       DARK MODE
+    ============================================ */
+    body.dark {
+      --bg: #0D0E13;
+      --surface: #171821;
+      --text: #F0F1F6;
+      --muted: #A8ACB9;
+      --border: #2A2C36;
+      --lavender: #27284A;
+      --primary: #777AFF;
+      --primary-dark: #5B5FEF;
+      --shadow: 0 18px 50px rgba(0, 0, 0, .40);
+      --shadow-lg: 0 24px 60px rgba(0, 0, 0, .50);
+    }
+    body.dark header {
+      background: rgba(13, 14, 19, .92);
+      border-bottom-color: rgba(42, 44, 54, .9);
+    }
+    body.dark nav a {
+      color: #C8CBD6;
+    }
+    body.dark nav a:hover,
+    body.dark nav a.active {
+      background: #27284A;
+      color: #E9E7FF;
+    }
+    body.dark .brand img {
+      background: #171821;
+      border-color: var(--border);
+    }
+    body.dark .page-hero {
+      background: linear-gradient(135deg, #1A1B30, rgba(91, 95, 239, 0.05));
+    }
+    body.dark .page-hero .eyebrow {
+      background: #171821;
+      border-color: var(--border);
+      color: #AEB2FF;
+    }
+    body.dark .content-card {
+      background: #171821;
+      border-color: var(--border);
+    }
+    body.dark .content-card p {
+      color: #B0B4C2;
+    }
+    body.dark .value-item {
+      background: #12131E;
+      border-color: var(--border);
+    }
+    body.dark .value-item p {
+      color: #A8ACB9;
+    }
+    body.dark .timeline-item {
+      background: #12131E;
+    }
+    body.dark .timeline-item p {
+      color: #A8ACB9;
+    }
+    body.dark .stats-mini .stat {
+      background: #12131E;
+      border-color: var(--border);
+    }
+    body.dark .stats-mini .stat p {
+      color: #A8ACB9;
+    }
+    body.dark .cta-banner {
+      background: linear-gradient(135deg, #2A2D6B, #5B5FEF);
+    }
+    body.dark .cta-banner p {
+      color: #D0D2FF;
+    }
+    body.dark .menu {
+      background: #171821;
+      border-color: var(--border);
+      color: #fff;
+    }
+    body.dark footer {
+      background: #08090C;
+    }
+    body.dark footer p,
+    body.dark footer a {
+      color: #A8ACB9;
+    }
+    body.dark footer a:hover {
+      color: #fff;
+    }
+    body.dark .footer-bottom {
+      border-color: #2A2C36;
+    }
+    body.dark .announcement {
+      background: #050609;
+    }
+    body.dark .announcement strong {
+      color: var(--lime);
+    }
+
+    /* Theme toggle */
+    .theme-toggle {
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+      color: var(--text);
+      display: inline-grid;
+      place-items: center;
+      cursor: pointer;
+      font-size: 18px;
+      transition: .2s ease;
+      flex: none;
+    }
+    .theme-toggle:hover {
+      transform: translateY(-2px);
+      border-color: var(--primary);
+      box-shadow: 0 8px 20px rgba(91, 95, 239, .15);
+    }
+    .theme-toggle .sun {
+      display: none;
+    }
+    body.dark .theme-toggle .moon {
+      display: none;
+    }
+    body.dark .theme-toggle .sun {
+      display: block;
+    }
+
+    /* ============================================
+       RESPONSIVE
+    ============================================ */
+    @media(max-width:980px) {
+      nav {
+        display: none
+      }
+      .menu {
+        display: block
+      }
+      .content-card {
+        padding: 28px 24px;
+      }
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+      .stats-mini {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .cta-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 32px 24px;
+      }
+      .cta-banner .btn-lime {
+        margin-top: 12px;
+      }
+    }
+    @media(max-width:620px) {
+      .container {
+        width: min(var(--max), calc(100% - 26px));
+      }
+      .brand {
+        min-width: 0;
+      }
+      .brand-text {
+        font-size: 14px;
+      }
+      .brand-text span {
+        display: none;
+      }
+      .page-hero {
+        padding: 40px 0 28px;
+      }
+      .page-hero h1 {
+        font-size: 34px;
+      }
+      .page-hero p {
+        font-size: 16px;
+      }
+      .content-card {
+        padding: 22px 18px;
+      }
+      .content-card h2 {
+        font-size: 22px;
+      }
+      .stats-mini {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .stats-mini .stat h4 {
+        font-size: 22px;
+      }
+      .timeline-item {
+        flex-direction: column;
+        gap: 4px;
+        padding: 14px 16px;
+      }
+      .timeline-item .year {
+        font-size: 16px;
+        min-width: auto;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+      .cta-banner h2 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================
+  ANNOUNCEMENT BAR
+  ============================================ -->
+  <div class="announcement">
+    <div class="announcement-track">
+      <span><strong>FALL 2026</strong> — BSCS &amp; BS English admissions open</span>
+      <span>•</span>
+      <span>Limited seats available for BSCS and BS English</span>
+      <span>•</span>
+      <span>First Merit List — Fall 2026</span>
+      <span>•</span>
+      <span>HSSC-I admission dates extended</span>
+      <span>•</span>
+    </div>
+  </div>
+
+  <!-- ============================================
+  HEADER
+  ============================================ -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="http://www.fgladc.edu.pk/">
+        <img src="http://www.fgladc.edu.pk/img/1662567147_fgladc-logo.jpg" alt="FGLADC logo">
+        <div class="brand-text">FG Liaquat Ali Degree College<span>Intermediate • Undergraduate</span></div>
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <a href="http://www.fgladc.edu.pk/">Home</a>
+        <a href="http://www.fgladc.edu.pk/programs/">Programs</a>
+        <a href="http://www.fgladc.edu.pk/">Admissions</a>
+        <a href="http://www.fgladc.edu.pk/downloads/">Downloads</a>
+        <a class="active" href="http://www.fgladc.edu.pk/about-college/">About</a>
+        <a href="http://www.fgladc.edu.pk/teaching-faculty/">Faculty</a>
+        <a href="http://www.fgladc.edu.pk/conduct-us/">Contact</a>
+        <a class="login" href="http://www.fgladc.edu.pk/mylogin.php">Login ↗</a>
+      </nav>
+
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">
+        <span class="moon">☾</span>
+        <span class="sun">☀</span>
+      </button>
+      <button class="menu" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <!-- ============================================
+  PAGE HERO
+  ============================================ -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="http://www.fgladc.edu.pk/">Home</a>
+        <span class="sep">/</span>
+        <span>About the College</span>
+      </div>
+      <div class="eyebrow">
+        <span class="dot"></span> EST. 2007
+      </div>
+      <h1>About <em>FG Liaquat Ali</em> Degree College</h1>
+      <p>Discover the history, mission, and values of one of Rawalpindi's leading institutions for Intermediate and Undergraduate education.</p>
+    </div>
+  </section>
+
+  <!-- ============================================
+  MAIN CONTENT
+  ============================================ -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+
+        <!-- ===== HISTORY CARD ===== -->
+        <article class="content-card">
+          <span class="pill">📖 Our Story</span>
+          <h2>A Legacy of <span class="highlight">Quality Education</span></h2>
+
+          <p>E.G. Liaquat Ali Degree College is one of the leading colleges in the Rawalpindi region. The college is a premier public sector institution which is imparting quality education to a great number of students at Intermediate and Degree level under the auspices of the Directorate of Federal Government Educational Institutions (Cants and Garrison), Ministry of Defence, Rawalpindi.</p>
+
+          <p>The college was established in 2007 as an inter-college for boys. Later, considering the growing needs of the quality academic facilities, BSc classes were introduced in 2010. The year 2019 witnessed an escalation in the institute's overall repute as the Department of English inaugurated 4-Years BS Programme in English Linguistics in affiliation with the University of the Punjab. A year later, the department of Computer Sciences also initiated 4-Years BS Programme in Information Technology.</p>
+
+          <p>The year 2021 beheld even a greater revolution, when the college opened its doors to the female students (for Undergraduate Programmes only) and offered equal seats for both boys and girls on general merit.</p>
+
+          <!-- Timeline -->
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="year">2007</span>
+              <p>Established as an inter-college for boys</p>
+            </div>
+            <div class="timeline-item">
+              <span class="year">2010</span>
+              <p>BSc classes introduced</p>
+            </div>
+            <div class="timeline-item">
+              <span class="year">2019</span>
+              <p>4-Year BS English (Linguistics) launched in affiliation with University of the Punjab</p>
+            </div>
+            <div class="timeline-item">
+              <span class="year">2020</span>
+              <p>4-Year BS Information Technology launched</p>
+            </div>
+            <div class="timeline-item">
+              <span class="year">2021</span>
+              <p>Opened doors to female students for Undergraduate Programmes</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===== MISSION & VISION CARD ===== -->
+        <article class="content-card">
+          <span class="pill">🎯 Purpose &amp; Direction</span>
+          <h2>Mission &amp; <span class="highlight">Vision</span></h2>
+
+          <p>The Mission and Vision of the college is to establish the dignity and worth of each student, and to develop their personality according to Islamic Ideology.</p>
+
+          <div class="values-grid">
+            <div class="value-item">
+              <div class="num">01</div>
+              <p>To establish the dignity and worth of each student.</p>
+            </div>
+            <div class="value-item">
+              <div class="num">02</div>
+              <p>The development of students' personality according to Islamic Ideology.</p>
+            </div>
+            <div class="value-item">
+              <div class="num">03</div>
+              <p>To inculcate the true spirit of patriotism and the guiding principles of Unity, Faith and Discipline.</p>
+            </div>
+            <div class="value-item">
+              <div class="num">04</div>
+              <p>To strengthen the interaction between Teachers, Students and Parents for collective welfare.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===== CAMPUS & FACILITIES CARD ===== -->
+        <article class="content-card">
+          <span class="pill">🏛️ Campus Life</span>
+          <h2>A Campus Built for <span class="highlight">Growth</span></h2>
+
+          <p>Located at a prime site on Peshawar Road, Rawalpindi, FG Liaquat Ali Degree College is housed in a beautiful and purpose-built campus equipped with all the necessary pre-requisites for its students: spacious classrooms, well-equipped science and computer labs, a big and well-stocked library with thousands of books on various subjects, an advanced digital library, a huge auditorium, a state of the art sports ground and a well-maintained Cafeteria. A mosque has also been built recently to meet the religious needs of both the students and the faculty.</p>
+
+          <div class="stats-mini">
+            <div class="stat">
+              <h4>1,200+</h4>
+              <p>Students Enrolled</p>
+            </div>
+            <div class="stat">
+              <h4>50+</h4>
+              <p>Faculty Members</p>
+            </div>
+            <div class="stat">
+              <h4>12</h4>
+              <p>Programs Offered</p>
+            </div>
+            <div class="stat">
+              <h4>98%</h4>
+              <p>Passing Rate</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===== PERSONALITY DEVELOPMENT CARD ===== -->
+        <article class="content-card">
+          <span class="pill">🌟 Beyond Academics</span>
+          <h2>Shaping <span class="highlight">Complete</span> Personalities</h2>
+
+          <p>The college lays great stress on overall personality development of its students and inspires their intellectual, social, spiritual and physical progress. It aims to chisel their innate talents, polish their progressive skills, and unshackle their latent potential to transform them into useful, active and creative citizens of Pakistan.</p>
+
+          <p>Therefore, along with counselling and academic training, sports are taken as integral part of a proper growth of human personality. The sports enthusiasts can satisfy their quest for many outdoor and indoor games, such as Badminton, Basketball, Hockey, Cricket, Football and Table Tennis.</p>
+
+          <p>The repute of the college has soared higher with each passing year. The hard work, dedication and the spirit of selflessness of the team — the Principal, the Faculty, the NTS, the Students and the Parents — is responsible for the pride of the College.</p>
+
+          <p style="margin-top:16px; padding:16px 20px; background:var(--lavender); border-radius:12px; color:var(--primary-dark); font-weight:600;">
+            💡 The Principal is the Head of the institution, who is empowered to run day to day administration of the college and to implement policy directives of the FGEI Directorate. Principal's decisions and orders in all matters of the college are binding on all students on roll.
+          </p>
+        </article>
+
+        <!-- ===== CTA BANNER ===== -->
+        <div class="cta-banner">
+          <div>
+            <h2>Ready to be part of this journey?</h2>
+            <p>Explore our programs, check admission updates, and take the next step in your academic journey.</p>
+          </div>
+          <a class="btn-lime" href="http://www.fgladc.edu.pk/">Explore Programs →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+  FOOTER
+  ============================================ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">FG Liaquat Ali Degree College</div>
+          <p>Intermediate &amp; undergraduate education with a modern, purposeful learning experience.</p>
+          <p>Monday–Friday · 8:00 AM–3:00 PM</p>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <a href="http://www.fgladc.edu.pk/programs/">Programs</a>
+          <a href="http://www.fgladc.edu.pk/about-college/">About</a>
+          <a href="http://www.fgladc.edu.pk/teaching-faculty/">Faculty</a>
+          <a href="http://www.fgladc.edu.pk/downloads/">Downloads</a>
+        </div>
+        <div>
+          <h3>Admissions</h3>
+          <a href="http://www.fgladc.edu.pk/">Fall 2026</a>
+          <a href="http://www.fgladc.edu.pk/required-documents-for-hssc/">HSSC Documents</a>
+          <a href="http://www.fgladc.edu.pk/procedure/">Admission Procedure</a>
+          <a href="http://www.fgladc.edu.pk/policies/">Policies</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p>+92 51 5492888</p>
+          <p>fgladc@yahoo.com</p>
+          <a href="http://www.fgladc.edu.pk/conduct-us/">Contact page →</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© FG Liaquat Ali Degree College. All rights reserved.</span>
+        <span>Designed with a modern academic + Gen Z visual language.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+  SCRIPTS
+  ============================================ -->
+  <script>
+    // ---- Theme Toggle ----
+    const savedTheme = localStorage.getItem('fgladc-theme');
+    if (savedTheme === 'dark') document.body.classList.add('dark');
+
+    function toggleTheme() {
+      const isDark = document.body.classList.toggle('dark');
+      localStorage.setItem('fgladc-theme', isDark ? 'dark' : 'light');
+      const button = document.querySelector('.theme-toggle');
+      if (button) button.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+
+    // ---- Mobile Menu ----
+    function toggleMenu() {
+      const nav = document.querySelector('nav');
+      const open = nav.style.display === 'flex';
+      nav.style.display = open ? '' : 'flex';
+      if (!open) {
+        nav.style.position = 'absolute';
+        nav.style.top = '76px';
+        nav.style.left = '13px';
+        nav.style.right = '13px';
+        nav.style.padding = '12px';
+        nav.style.background = '#fff';
+        nav.style.border = '1px solid #E5E7EF';
+        nav.style.borderRadius = '18px';
+        nav.style.boxShadow = '0 18px 50px rgba(35,38,80,.12)';
+        nav.style.flexDirection = 'column';
+        nav.style.alignItems = 'stretch';
+      }
+    }
+
+    // ---- Close menu on outside click ----
+    document.addEventListener('click', function(e) {
+      const nav = document.querySelector('nav');
+      const menuBtn = document.querySelector('.menu');
+      if (nav && nav.style.display === 'flex' && !nav.contains(e.target) && !menuBtn.contains(e.target)) {
+        nav.style.display = '';
+        nav.style.position = '';
+        nav.style.top = '';
+        nav.style.left = '';
+        nav.style.right = '';
+        nav.style.padding = '';
+        nav.style.border = '';
+        nav.style.borderRadius = '';
+        nav.style.boxShadow = '';
+        nav.style.flexDirection = '';
+        nav.style.alignItems = '';
+      }
+    });
+  </script>
+
+</body>
+</html>

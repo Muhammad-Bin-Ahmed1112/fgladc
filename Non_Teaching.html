@@ -16,21 +16,24 @@
 
   <style>
     /* ============================================
-       ROOT VARIABLES
+       ROOT VARIABLES — DARK THEME BY DEFAULT
     ============================================ */
     :root {
-      --primary: #5B5FEF;
-      --primary-dark: #3538A8;
+      --primary: #777AFF;
+      --primary-dark: #5B5FEF;
       --cyan: #22D3EE;
       --lime: #B8F34A;
-      --lavender: #E9E7FF;
-      --bg: #F8F9FC;
-      --surface: #FFFFFF;
-      --text: #171821;
-      --muted: #626878;
-      --border: #E5E7EF;
-      --shadow: 0 18px 50px rgba(35, 38, 80, .10);
-      --shadow-lg: 0 24px 60px rgba(35, 38, 80, .15);
+      --lavender: #1a1a2e;
+      
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --text: #f0f0f0;
+      --muted: #999999;
+      --border: #2a2a2a;
+      
+      --shadow: 0 18px 50px rgba(0, 0, 0, .60);
+      --shadow-lg: 0 24px 60px rgba(0, 0, 0, .70);
+      
       --radius: 22px;
       --radius-sm: 12px;
       --max: 1180px;
@@ -108,9 +111,9 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(248, 249, 252, .92);
+      background: rgba(10, 10, 10, .92);
       backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(229, 231, 239, .8);
+      border-bottom: 1px solid rgba(42, 42, 42, .8);
       transition: background .3s ease, border-color .3s ease;
     }
     .nav {
@@ -131,13 +134,14 @@
       height: 52px;
       object-fit: contain;
       border-radius: 14px;
-      background: #fff;
+      background: #141414;
       border: 1px solid var(--border);
     }
     .brand-text {
       font-family: "Space Grotesk", sans-serif;
       font-weight: 700;
       line-height: 1.05;
+      color: #f0f0f0;
     }
     .brand-text span {
       display: block;
@@ -161,19 +165,19 @@
       border-radius: 12px;
       font-size: 14px;
       font-weight: 600;
-      color: #454957;
+      color: #a0a0b0;
       transition: .2s ease;
     }
     nav a:hover,
     nav a.active {
       background: var(--lavender);
-      color: var(--primary-dark);
+      color: #e9e7ff;
     }
     .login {
       background: var(--primary);
       color: #fff !important;
       padding: 11px 17px !important;
-      box-shadow: 0 8px 20px rgba(91, 95, 239, .25);
+      box-shadow: 0 8px 20px rgba(119, 122, 255, .25);
     }
     .login:hover {
       background: var(--primary-dark) !important;
@@ -229,7 +233,7 @@
     }
     nav .dropdown-menu a:hover {
       background: var(--lavender);
-      color: var(--primary-dark);
+      color: #e9e7ff;
     }
     nav .dropdown-menu a:first-child {
       border-radius: var(--radius-sm) var(--radius-sm) 0 0;
@@ -241,12 +245,16 @@
     .menu {
       display: none;
       border: 0;
-      background: #fff;
+      background: transparent;
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 10px 12px;
       font-size: 20px;
+      color: #f0f0f0;
       cursor: pointer;
+    }
+    .menu:hover {
+      background: var(--surface);
     }
 
     /* ============================================
@@ -256,7 +264,7 @@
       padding: 50px 0 36px;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(135deg, var(--lavender) 0%, rgba(91, 95, 239, 0.05) 100%);
+      background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0a 100%);
     }
     .page-hero:before {
       content: "";
@@ -264,7 +272,7 @@
       width: 500px;
       height: 500px;
       border-radius: 50%;
-      background: rgba(91, 95, 239, 0.04);
+      background: rgba(119, 122, 255, 0.04);
       right: -200px;
       top: -200px;
       z-index: 0;
@@ -284,8 +292,8 @@
       font-size: 12px;
       font-weight: 700;
       letter-spacing: .04em;
-      color: var(--primary-dark);
-      box-shadow: 0 8px 24px rgba(20, 20, 50, .05);
+      color: #aeb2ff;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .3);
     }
     .page-hero .dot {
       width: 8px;
@@ -299,6 +307,7 @@
       line-height: 1.02;
       letter-spacing: -.04em;
       margin: 16px 0 10px;
+      color: #f0f0f0;
     }
     .page-hero h1 em {
       font-style: normal;
@@ -358,6 +367,7 @@
       font: 700 clamp(28px, 3.5vw, 40px)/1.05 "Space Grotesk", sans-serif;
       letter-spacing: -.03em;
       margin: 4px 0 0;
+      color: #f0f0f0;
     }
     .section-head h2 .highlight {
       color: var(--primary);
@@ -378,7 +388,7 @@
       border-radius: 999px;
       font-size: 13px;
       font-weight: 700;
-      color: var(--primary-dark);
+      color: #aeb2ff;
     }
     .staff-count i {
       font-size: 14px;
@@ -418,7 +428,7 @@
       width: 4px;
       height: 100%;
       background: var(--primary);
-      border-radius: 0 0 0 0;
+      border-radius: 0;
     }
 
     /* Different accent colors for variety */
@@ -467,7 +477,7 @@
       font-family: "Space Grotesk", sans-serif;
       font-weight: 700;
       font-size: 20px;
-      color: var(--primary-dark);
+      color: #aeb2ff;
       margin-bottom: 14px;
     }
 
@@ -528,7 +538,7 @@
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: .06em;
-      color: var(--primary-dark);
+      color: #aeb2ff;
       border-bottom: 2px solid var(--border);
     }
 
@@ -553,7 +563,7 @@
       font-size: 11px;
       font-weight: 600;
       background: var(--lavender);
-      color: var(--primary-dark);
+      color: #aeb2ff;
     }
 
     /* ============================================
@@ -608,7 +618,7 @@
        FOOTER
     ============================================ */
     footer {
-      background: #111217;
+      background: #08090C;
       color: #fff;
       padding: 55px 0 25px;
       margin-top: 16px;
@@ -621,11 +631,12 @@
     footer h3 {
       font: 700 17px "Space Grotesk";
       margin: 0 0 15px;
+      color: #f0f0f0;
     }
     footer p,
     footer a {
       font-size: 13px;
-      color: #aeb1be;
+      color: #a8acb9;
     }
     footer a {
       display: block;
@@ -637,9 +648,10 @@
     .footer-brand {
       font: 700 22px "Space Grotesk";
       margin-bottom: 10px;
+      color: #f0f0f0;
     }
     .footer-bottom {
-      border-top: 1px solid #2b2c34;
+      border-top: 1px solid #2a2c36;
       margin-top: 38px;
       padding-top: 18px;
       color: #747783;
@@ -650,133 +662,120 @@
     }
 
     /* ============================================
-       DARK MODE
+       LIGHT MODE
     ============================================ */
-    body.dark {
-      --bg: #0D0E13;
-      --surface: #171821;
-      --text: #F0F1F6;
-      --muted: #A8ACB9;
-      --border: #2A2C36;
-      --lavender: #27284A;
-      --primary: #777AFF;
-      --primary-dark: #5B5FEF;
-      --shadow: 0 18px 50px rgba(0, 0, 0, .40);
-      --shadow-lg: 0 24px 60px rgba(0, 0, 0, .50);
+    body.light {
+      --bg: #F8F9FC;
+      --surface: #FFFFFF;
+      --text: #171821;
+      --muted: #626878;
+      --border: #E5E7EF;
+      --lavender: #E9E7FF;
+      --primary: #5B5FEF;
+      --primary-dark: #3538A8;
+      --shadow: 0 18px 50px rgba(35, 38, 80, .10);
+      --shadow-lg: 0 24px 60px rgba(35, 38, 80, .15);
     }
-    body.dark header {
-      background: rgba(13, 14, 19, .92);
-      border-bottom-color: rgba(42, 44, 54, .9);
+    body.light header {
+      background: rgba(248, 249, 252, .92);
+      border-bottom-color: rgba(229, 231, 239, .8);
     }
-    body.dark nav a {
-      color: #C8CBD6;
+    body.light nav a {
+      color: #454957;
     }
-    body.dark nav a:hover,
-    body.dark nav a.active {
-      background: #27284A;
-      color: #E9E7FF;
+    body.light nav a:hover,
+    body.light nav a.active {
+      background: var(--lavender);
+      color: var(--primary-dark);
     }
-    body.dark nav .dropdown-menu {
-      background: #171821;
+    body.light .brand img {
+      background: #fff;
       border-color: var(--border);
     }
-    body.dark nav .dropdown-menu a {
-      color: #F0F1F6;
+    body.light .brand-text {
+      color: var(--text);
     }
-    body.dark nav .dropdown-menu a:hover {
-      background: #27284A;
-      color: #E9E7FF;
+    body.light .page-hero {
+      background: linear-gradient(135deg, var(--lavender) 0%, rgba(91, 95, 239, 0.05) 100%);
     }
-    body.dark .brand img {
-      background: #171821;
+    body.light .page-hero .eyebrow {
+      color: var(--primary-dark);
+    }
+    body.light .page-hero h1 {
+      color: var(--text);
+    }
+    body.light .faculty-card {
+      background: var(--surface);
       border-color: var(--border);
     }
-    body.dark .page-hero {
-      background: linear-gradient(135deg, #1A1B30, rgba(91, 95, 239, 0.05));
+    body.light .faculty-card .avatar {
+      background: var(--lavender);
+      color: var(--primary-dark);
     }
-    body.dark .page-hero .eyebrow {
-      background: #171821;
-      border-color: var(--border);
-      color: #AEB2FF;
+    body.light .faculty-card h3 {
+      color: var(--text);
     }
-    body.dark .faculty-card {
-      background: #171821;
-      border-color: var(--border);
+    body.light .faculty-card .designation {
+      color: var(--primary);
     }
-    body.dark .faculty-card:hover {
-      border-color: #777AFF;
+    body.light .faculty-card .serial {
+      color: var(--muted);
     }
-    body.dark .faculty-card .avatar {
-      background: #27284A;
-      color: #AEB2FF;
+    body.light .faculty-card .dept {
+      color: var(--muted);
     }
-    body.dark .faculty-card h3 {
-      color: #F0F1F6;
-    }
-    body.dark .faculty-card .designation {
-      color: #777AFF;
-    }
-    body.dark .faculty-card .serial {
-      color: #A8ACB9;
-    }
-    body.dark .faculty-card .dept {
-      color: #A8ACB9;
-    }
-    body.dark .table-wrapper {
-      background: #171821;
+    body.light .table-wrapper {
+      background: var(--surface);
       border-color: var(--border);
     }
-    body.dark .faculty-table thead {
-      background: #27284A;
+    body.light .faculty-table thead {
+      background: var(--lavender);
     }
-    body.dark .faculty-table th {
-      color: #AEB2FF;
-      border-bottom-color: var(--border);
+    body.light .faculty-table th {
+      color: var(--primary-dark);
     }
-    body.dark .faculty-table td {
-      border-bottom-color: var(--border);
-      color: #F0F1F6;
+    body.light .faculty-table td {
+      color: var(--text);
     }
-    body.dark .faculty-table tr:hover {
-      background: #27284A;
+    body.light .faculty-table tr:hover {
+      background: var(--lavender);
     }
-    body.dark .faculty-table .badge {
-      background: #27284A;
-      color: #AEB2FF;
+    body.light .faculty-table .badge {
+      background: var(--lavender);
+      color: var(--primary-dark);
     }
-    body.dark .menu {
-      background: #171821;
+    body.light .staff-count {
+      background: var(--lavender);
+      color: var(--primary-dark);
+    }
+    body.light .cta-banner {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    }
+    body.light .menu {
+      background: var(--surface);
       border-color: var(--border);
+      color: var(--text);
+    }
+    body.light footer {
+      background: #111217;
+    }
+    body.light footer h3 {
       color: #fff;
     }
-    body.dark .cta-banner {
-      background: linear-gradient(135deg, #2A2D6B, #5B5FEF);
+    body.light footer p,
+    body.light footer a {
+      color: #aeb1be;
     }
-    body.dark .cta-banner p {
-      color: #D0D2FF;
+    body.light .footer-bottom {
+      border-color: #2b2c34;
     }
-    body.dark footer {
-      background: #08090C;
+    body.light .theme-toggle {
+      background: var(--surface);
+      border-color: var(--border);
+      color: var(--text);
     }
-    body.dark footer p,
-    body.dark footer a {
-      color: #A8ACB9;
-    }
-    body.dark footer a:hover {
-      color: #fff;
-    }
-    body.dark .footer-bottom {
-      border-color: #2A2C36;
-    }
-    body.dark .announcement {
-      background: var(--marquee-color);
-    }
-    body.dark .announcement strong {
-      color: #fff;
-    }
-    body.dark .staff-count {
-      background: #27284A;
-      color: #AEB2FF;
+    body.light .theme-toggle:hover {
+      border-color: var(--primary);
     }
 
     /* Theme toggle */
@@ -797,20 +796,20 @@
     .theme-toggle:hover {
       transform: translateY(-2px);
       border-color: var(--primary);
-      box-shadow: 0 8px 20px rgba(91, 95, 239, .15);
+      box-shadow: 0 8px 20px rgba(119, 122, 255, .15);
     }
     .theme-toggle .sun {
       display: none;
     }
-    body.dark .theme-toggle .moon {
+    body.light .theme-toggle .moon {
       display: none;
     }
-    body.dark .theme-toggle .sun {
+    body.light .theme-toggle .sun {
       display: block;
     }
 
     /* ============================================
-       RESPONSIVE
+       RESPONSIVE — FIXED DARK MOBILE MENU
     ============================================ */
     @media(max-width:980px) {
       .menu {
@@ -824,15 +823,35 @@
         top: 76px;
         left: 13px;
         right: 13px;
-        padding: 12px;
+        padding: 16px;
         background: var(--surface);
         border: 1px solid var(--border);
         border-radius: 18px;
-        box-shadow: 0 18px 50px rgba(35, 38, 80, .12);
+        box-shadow: 0 18px 50px rgba(0, 0, 0, .6);
         gap: 4px;
+        z-index: 150;
       }
       nav.open {
         display: flex;
+      }
+      nav a {
+        color: var(--text);
+        padding: 10px 14px;
+        border-radius: 10px;
+      }
+      nav a:hover,
+      nav a.active {
+        background: var(--lavender);
+        color: #e9e7ff;
+      }
+      nav .login {
+        background: var(--primary);
+        color: #fff !important;
+        text-align: center;
+      }
+      nav .login:hover {
+        background: var(--primary-dark) !important;
+        color: #fff !important;
       }
       nav .dropdown {
         position: static;
@@ -855,12 +874,36 @@
       nav .dropdown-menu a {
         padding: 8px 16px;
         font-size: 14px;
+        color: var(--text);
       }
-      body.dark nav .dropdown-menu {
-        background: transparent;
+      nav .dropdown-menu a:hover {
+        background: var(--lavender);
+        color: #e9e7ff;
       }
       nav .dropdown-toggle i {
         margin-left: auto;
+      }
+
+      /* Light mode mobile menu */
+      body.light nav {
+        background: var(--surface);
+        border-color: var(--border);
+        box-shadow: 0 18px 50px rgba(0, 0, 0, .15);
+      }
+      body.light nav a {
+        color: var(--text);
+      }
+      body.light nav a:hover,
+      body.light nav a.active {
+        background: var(--lavender);
+        color: var(--primary-dark);
+      }
+      body.light nav .dropdown-menu a {
+        color: var(--text);
+      }
+      body.light nav .dropdown-menu a:hover {
+        background: var(--lavender);
+        color: var(--primary-dark);
       }
 
       .faculty-grid {
@@ -930,7 +973,7 @@
   </style>
 </head>
 
-<body class="dark">
+<body class="">
 
   <!-- ============================================
   ANNOUNCEMENT BAR — #d72d32 COLOR
@@ -958,7 +1001,7 @@
         <div class="brand-text">FG Liaquat Ali Degree College<span>Intermediate • Undergraduate</span></div>
       </a>
 
-      <nav aria-label="Primary navigation">
+      <nav aria-label="Primary navigation" class="">
         <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/">Home</a>
         <a href="#programs">Programs</a>
         <a href="#admissions">Admissions</a>
@@ -975,10 +1018,10 @@
         </div>
 
         <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/Contact.html">Contact</a>
-        
+        <a class="login" href="http://www.fgladc.edu.pk/mylogin.php">Login ↗</a>
       </nav>
 
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Switch to light mode" title="Switch theme">
         <span class="moon">☾</span>
         <span class="sun">☀</span>
       </button>
@@ -1031,7 +1074,6 @@
           <div class="avatar">MA</div>
           <h3>Mr. Muhammad Arshad</h3>
           <div class="designation">Admin Officer</div>
-          
         </div>
 
         <div class="faculty-card">
@@ -1039,7 +1081,6 @@
           <div class="avatar">JF</div>
           <h3>Ms. Javeria Fayyaz</h3>
           <div class="designation">Data Entry Operator</div>
-          
         </div>
 
         <div class="faculty-card">
@@ -1047,7 +1088,6 @@
           <div class="avatar">JP</div>
           <h3>Mr. Junaid Patras</h3>
           <div class="designation">LDC</div>
-          
         </div>
 
         <div class="faculty-card">
@@ -1055,7 +1095,6 @@
           <div class="avatar">YM</div>
           <h3>Mr. Yasir Munir</h3>
           <div class="designation">Library Assistant</div>
-          
         </div>
 
         <div class="faculty-card">
@@ -1063,7 +1102,6 @@
           <div class="avatar">MS</div>
           <h3>Ms. Muniba Shoukat</h3>
           <div class="designation">Data Entry Operator</div>
-          
         </div>
 
         <div class="faculty-card">
@@ -1071,7 +1109,6 @@
           <div class="avatar">FM</div>
           <h3>Mr. Faisal Mehmood</h3>
           <div class="designation">Lab Assistant</div>
-          
         </div>
 
         <div class="faculty-card">
@@ -1079,7 +1116,6 @@
           <div class="avatar">HR</div>
           <h3>Mr. Hassan Raza</h3>
           <div class="designation">Lab Assistant</div>
-          
         </div>
 
         <div class="faculty-card">
@@ -1087,7 +1123,6 @@
           <div class="avatar">AH</div>
           <h3>Mr. Ali Husnain</h3>
           <div class="designation">Lab Assistant</div>
-          
         </div>
 
         <div class="faculty-card">
@@ -1095,7 +1130,6 @@
           <div class="avatar">BA</div>
           <h3>Mr. Basit Ahmed</h3>
           <div class="designation">Lab Assistant</div>
-          
         </div>
 
         <div class="faculty-card">
@@ -1103,7 +1137,6 @@
           <div class="avatar">HR</div>
           <h3>Mr. Hammad Rauf</h3>
           <div class="designation">Lab Attendant</div>
-          
         </div>
 
         <div class="faculty-card">
@@ -1111,22 +1144,14 @@
           <div class="avatar">MNA</div>
           <h3>Mr. Muhammad Naseer Alam</h3>
           <div class="designation">Lab Attendant</div>
-          
         </div>
 
       </div>
 
       <!-- ===== TABLE VIEW ===== -->
-      <div style="margin-top:44px;">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-          
-          
-        </div>
-
-        
-      </div>
-
       
+
+      <!-- ===== CTA BANNER ===== -->
       
 
     </div>
@@ -1177,15 +1202,20 @@
   SCRIPTS
   ============================================ -->
   <script>
-    // ---- Theme Toggle ----
+    // ---- Default to dark mode ----
     const savedTheme = localStorage.getItem('fgladc-theme');
-    if (savedTheme === 'dark') document.body.classList.add('dark');
+    if (savedTheme === 'light') {
+      document.body.classList.add('light');
+    } else {
+      document.body.classList.remove('light');
+      // Dark is default
+    }
 
     function toggleTheme() {
-      const isDark = document.body.classList.toggle('dark');
-      localStorage.setItem('fgladc-theme', isDark ? 'dark' : 'light');
+      const isLight = document.body.classList.toggle('light');
+      localStorage.setItem('fgladc-theme', isLight ? 'light' : 'dark');
       const button = document.querySelector('.theme-toggle');
-      if (button) button.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      if (button) button.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
     }
 
     // ---- Mobile Menu Toggle ----
@@ -1225,7 +1255,6 @@
       }
     });
   </script>
-
 
 
 </body></html>

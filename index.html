@@ -37,7 +37,147 @@
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
     .container{width:min(var(--max),calc(100% - 40px));margin:auto}
+/* ============================================
+   DROPDOWN STYLES
+============================================ */
+nav .dropdown {
+  position: relative;
+}
 
+nav .dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+nav .dropdown-toggle i {
+  font-size: 10px;
+  transition: transform .2s ease;
+}
+
+nav .dropdown:hover .dropdown-toggle i {
+  transform: rotate(180deg);
+}
+
+nav .dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 200px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  padding: 8px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: .25s ease;
+  z-index: 200;
+}
+
+nav .dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+nav .dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  border-radius: 0;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--text);
+  background: transparent;
+  transition: .15s ease;
+}
+
+nav .dropdown-menu a:hover {
+  background: var(--lavender);
+  color: var(--primary-dark);
+}
+
+nav .dropdown-menu a:first-child {
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+nav .dropdown-menu a:last-child {
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+
+/* Dark mode dropdown */
+body.dark nav .dropdown-menu {
+  background: #171821;
+  border-color: var(--border);
+}
+
+body.dark nav .dropdown-menu a {
+  color: #F0F1F6;
+}
+
+body.dark nav .dropdown-menu a:hover {
+  background: #27284A;
+  color: #E9E7FF;
+}
+
+/* Mobile responsive */
+@media(max-width:980px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    position: absolute;
+    top: 76px;
+    left: 13px;
+    right: 13px;
+    padding: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: 0 18px 50px rgba(35, 38, 80, .12);
+    gap: 4px;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  nav .dropdown {
+    position: static;
+  }
+
+  nav .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    padding: 4px 0 4px 20px;
+    background: transparent;
+    display: none;
+    width: 100%;
+  }
+
+  nav .dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  nav .dropdown-menu a {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  body.dark nav .dropdown-menu {
+    background: transparent;
+  }
+
+  nav .dropdown-toggle i {
+    margin-left: auto;
+  }
+}
     /* Announcement */
     .announcement{
       background:#171821;
@@ -468,7 +608,7 @@
   </style>
 </head>
 
-<body class="">
+<body class="dark">
  
   <div class="announcement" style="background-color: #d72d32;color: #ffffff;">
     <div class="announcement-track">
@@ -484,20 +624,26 @@
 
   <header>
     <div class="container nav">
-      <a class="brand" href="http://www.fgladc.edu.pk/">
+      <a class="brand" href="https://muhammad-bin-ahmed1112.github.io/fgladc">
         <img src="assests/images/FGLADC.png" alt="FGLADC logo" style="border: none;" "="">
         <div class="brand-text">FG Liaquat Ali Degree College<span>Intermediate • Undergraduate</span></div>
       </a>
 
       <nav aria-label="Primary navigation">
-        <a class="active" href="http://www.fgladc.edu.pk/">Home</a>
+        <a class="active" href="https://muhammad-bin-ahmed1112.github.io/fgladc">Home</a>
         <a href="#programs">Programs</a>
         <a href="#admissions">Admissions</a>
         <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/Download">Downloads</a>
-        <a href="#about">About</a>
-        <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/Faculty">Faculty</a>
-        <a href="http://www.fgladc.edu.pk/conduct-us/">Contact</a>
-        <a class="login" href="http://www.fgladc.edu.pk/mylogin.php">Login ↗</a>
+        <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/About_Us.html">About</a>
+         <div class="dropdown">
+    <a href="#" class="dropdown-toggle">Faculty <i class="fas fa-chevron-down"></i></a>
+    <div class="dropdown-menu">
+      <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/Faculty.html">Teaching Faculty</a>
+      <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/Non_Teaching.html">Non Teaching Faculty</a>
+    </div>
+  </div>
+        <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/Contact.html">Contact</a>
+        
       </nav>
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="Switch to dark mode" title="Switch theme">
         <span class="moon">☀</span><span class="sun">☀</span>
@@ -535,17 +681,17 @@
           <h3>Admissions</h3>
           <p>Check current admission announcements.</p>
         </a>
-        <a class="quick-card" href="http://www.fgladc.edu.pk/programs/">
+        <a class="quick-card" href="#Programs">
           <div class="icon">02</div>
           <h3>Programs</h3>
           <p>Explore Intermediate and BS pathways.</p>
         </a>
-        <a class="quick-card" href="http://www.fgladc.edu.pk/downloads/">
+        <a class="quick-card" href="https://muhammad-bin-ahmed1112.github.io/fgladc/Download.html">
           <div class="icon">03</div>
           <h3>Downloads</h3>
           <p>Access forms, notices and documents.</p>
         </a>
-        <a class="quick-card" href="http://www.fgladc.edu.pk/teaching-faculty/">
+        <a class="quick-card" href="https://muhammad-bin-ahmed1112.github.io/fgladc/Faculty.html">
           <div class="icon">04</div>
           <h3>Faculty</h3>
           <p>Meet the teaching team.</p>
@@ -564,7 +710,7 @@
         </div>
 
         <div class="program-grid">
-          <a class="program" href="http://www.fgladc.edu.pk/programs/">
+          <a class="program" href="#progam">
             <span class="program-num">01 / INTERMEDIATE</span>
             <span class="arrow">→</span>
             <h3>Intermediate</h3>
@@ -572,7 +718,7 @@
             <span class="tag">HSSC</span>
           </a>
 
-          <a class="program" href="http://www.fgladc.edu.pk/programs/">
+          <a class="program" href="#program">
             <span class="program-num">02 / UNDERGRADUATE</span>
             <span class="arrow">→</span>
             <h3>BS Computer<br>Science</h3>
@@ -580,7 +726,7 @@
             <span class="tag">4 YEARS</span>
           </a>
 
-          <a class="program" href="http://www.fgladc.edu.pk/programs/">
+          <a class="program" href="#program">
             <span class="program-num">03 / UNDERGRADUATE</span>
             <span class="arrow">→</span>
             <h3>BS English</h3>
@@ -669,7 +815,7 @@
             <h2>Ready to take the next step?</h2>
             <p>Check the latest admission announcements, merit lists and instructions before applying.</p>
           </div>
-          <a class="btn btn-lime" href="http://www.fgladc.edu.pk/">View Admissions ↗</a>
+          <a class="btn btn-lime" href="https://muhammad-bin-ahmed1112.github.io/fgladc">View Admissions ↗</a>
         </div>
       </div>
     </section>
@@ -686,9 +832,9 @@
         <div>
           <h3>Explore</h3>
           <a href="#programs">Programs</a>
-          <a href="#about">About</a>
+          <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/About_Us.html">About</a>
           <a href="http://www.fgladc.edu.pk/teaching-faculty/">Faculty</a>
-          <a href="http://www.fgladc.edu.pk/downloads/">Downloads</a>
+          <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/Faculty.html">Downloads</a>
         </div>
         <div>
           <h3>Admissions</h3>
@@ -701,7 +847,7 @@
           <h3>Contact</h3>
           <p>+92 51 5492888</p>
           <p>fgladc@yahoo.com</p>
-          <a href="http://www.fgladc.edu.pk/conduct-us/">Contact Us</a>
+          <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/Contact.html">Contact Us</a>
         </div>
       </div>
 
@@ -743,5 +889,6 @@
       }
     }
   </script>
+
 
 </body></html>

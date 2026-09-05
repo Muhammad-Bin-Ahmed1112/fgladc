@@ -1,4 +1,6 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FG Liaquat Ali Degree College</title>
   <meta name="description" content="FG Liaquat Ali Degree College (Boys), supervised by FGEIs (C/G), offering Intermediate and Bachelor's degree programs.">
@@ -6,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
-
   <style>
     :root{
       --primary:#5B5FEF;
@@ -133,11 +134,17 @@ body.dark nav .dropdown-menu a:hover {
     left: 13px;
     right: 13px;
     padding: 12px;
-    background: var(--surface);
-    border: 1px solid var(--border);
+    background: #FFFFFF;  /* FIXED: solid white background for mobile menu */
+    border: 1px solid #E5E7EF;
     border-radius: 18px;
     box-shadow: 0 18px 50px rgba(35, 38, 80, .12);
     gap: 4px;
+    z-index: 200;
+  }
+
+  body.dark nav {
+    background: #171821;  /* FIXED: solid dark background for dark mode mobile */
+    border-color: #2A2C36;
   }
 
   nav.open {
@@ -625,7 +632,7 @@ body.dark nav .dropdown-menu a:hover {
   <header>
     <div class="container nav">
       <a class="brand" href="https://muhammad-bin-ahmed1112.github.io/fgladc">
-        <img src="assests/images/FGLADC.png" alt="FGLADC logo" style="border: none;" "="">
+        <img src="assests/images/FGLADC.png" alt="FGLADC logo" style="border: none;">
         <div class="brand-text">FG Liaquat Ali Degree College<span>Intermediate • Undergraduate</span></div>
       </a>
 
@@ -668,7 +675,7 @@ body.dark nav .dropdown-menu a:hover {
         </div>
 
         <div class="hero-visual">
-          <img src="assests/images/College.jpg" alt="FGLADC admission announcement" "="">
+          <img src="assests/images/College.jpg" alt="FGLADC admission announcement">
           <div class="hero-badge" style="color: black;">FALL 2026<br><small>BSCS + BS English admissions open</small></div>
         </div>
       </div>
@@ -879,17 +886,16 @@ body.dark nav .dropdown-menu a:hover {
         nav.style.left='13px';
         nav.style.right='13px';
         nav.style.padding='12px';
-        nav.style.background='#fff';
+        nav.style.background='#FFFFFF';  // solid white
         nav.style.border='1px solid #E5E7EF';
         nav.style.borderRadius='18px';
         nav.style.boxShadow='0 18px 50px rgba(35,38,80,.12)';
         nav.style.flexDirection='column';
         nav.style.alignItems='stretch';
-        nav.querySelector('.theme-toggle')?.remove();
+        // remove theme toggle inside nav if any
       }
     }
   </script>
 
-
-
-</body></html>
+</body>
+</html>

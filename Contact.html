@@ -1,0 +1,1023 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us — FG Liaquat Ali Degree College</title>
+  <meta name="description" content="Get in touch with FG Liaquat Ali Degree College, Rawalpindi. Phone, email, and location information.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    /* ============================================
+       ROOT VARIABLES
+    ============================================ */
+    :root {
+      --primary: #5B5FEF;
+      --primary-dark: #3538A8;
+      --cyan: #22D3EE;
+      --lime: #B8F34A;
+      --lavender: #E9E7FF;
+      --bg: #F8F9FC;
+      --surface: #FFFFFF;
+      --text: #171821;
+      --muted: #626878;
+      --border: #E5E7EF;
+      --shadow: 0 18px 50px rgba(35, 38, 80, .10);
+      --shadow-lg: 0 24px 60px rgba(35, 38, 80, .15);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: var(--text);
+      background: var(--bg);
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.7;
+      transition: background .3s ease, color .3s ease;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* ============================================
+       ANNOUNCEMENT BAR
+    ============================================ */
+    .announcement {
+      background: #171821;
+      color: #fff;
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 13px;
+    }
+    .announcement-track {
+      display: flex;
+      gap: 38px;
+      width: max-content;
+      padding: 9px 0;
+      animation: scrollNews 28s linear infinite;
+    }
+    .announcement strong {
+      color: var(--lime);
+    }
+    @keyframes scrollNews {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-35%);
+      }
+    }
+
+    /* ============================================
+       HEADER
+    ============================================ */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 249, 252, .92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(229, 231, 239, .8);
+      transition: background .3s ease, border-color .3s ease;
+    }
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 245px;
+    }
+    .brand img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid var(--border);
+    }
+    .brand-text {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      line-height: 1.05;
+    }
+    .brand-text span {
+      display: block;
+      font: 500 10px Inter, sans-serif;
+      color: var(--muted);
+      margin-top: 4px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    nav a {
+      padding: 10px 13px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #454957;
+      transition: .2s ease;
+    }
+    nav a:hover,
+    nav a.active {
+      background: var(--lavender);
+      color: var(--primary-dark);
+    }
+    .login {
+      background: var(--primary);
+      color: #fff !important;
+      padding: 11px 17px !important;
+      box-shadow: 0 8px 20px rgba(91, 95, 239, .25);
+    }
+    .login:hover {
+      background: var(--primary-dark) !important;
+      color: #fff !important;
+    }
+    .menu {
+      display: none;
+      border: 0;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    /* ============================================
+       PAGE HERO
+    ============================================ */
+    .page-hero {
+      padding: 50px 0 36px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--lavender) 0%, rgba(91, 95, 239, 0.05) 100%);
+    }
+    .page-hero:before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: rgba(91, 95, 239, 0.04);
+      right: -200px;
+      top: -200px;
+      z-index: 0;
+    }
+    .page-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    .page-hero .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      color: var(--primary-dark);
+      box-shadow: 0 8px 24px rgba(20, 20, 50, .05);
+    }
+    .page-hero .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--lime);
+      border-radius: 50%;
+    }
+    .page-hero h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(36px, 4.5vw, 54px);
+      line-height: 1.02;
+      letter-spacing: -.04em;
+      margin: 16px 0 10px;
+    }
+    .page-hero h1 em {
+      font-style: normal;
+      color: var(--primary);
+    }
+    .page-hero p {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 600px;
+    }
+
+    /* ============================================
+       BREADCRUMB
+    ============================================ */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+    .breadcrumb a {
+      color: var(--primary);
+      font-weight: 600;
+    }
+    .breadcrumb a:hover {
+      color: var(--primary-dark);
+    }
+    .breadcrumb .sep {
+      opacity: 0.4;
+    }
+
+    /* ============================================
+       CONTACT SECTION
+    ============================================ */
+    .contact-section {
+      padding: 40px 0 64px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: stretch;
+    }
+
+    /* ============================================
+       CONTACT CARDS
+    ============================================ */
+    .contact-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: .25s ease;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .contact-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary);
+    }
+
+    .contact-card .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--lavender);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: var(--primary);
+      flex-shrink: 0;
+      transition: .2s ease;
+    }
+    .contact-card:hover .icon {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .contact-card .info h3 {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      margin: 0 0 2px;
+    }
+    .contact-card .info p {
+      font-size: 15px;
+      color: var(--muted);
+      margin: 0;
+    }
+    .contact-card .info a {
+      color: var(--primary);
+      font-weight: 600;
+      transition: .2s ease;
+    }
+    .contact-card .info a:hover {
+      color: var(--primary-dark);
+    }
+
+    /* ============================================
+       MAP / LOCATION CARD — WITH EMBED
+    ============================================ */
+    .location-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: .25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .location-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-3px);
+    }
+
+    .location-card iframe {
+      width: 100%;
+      height: 260px;
+      border: 0;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .location-card .location-details {
+      padding: 24px 28px;
+      flex: 1;
+    }
+    .location-card .location-details h3 {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      margin: 0 0 6px;
+    }
+    .location-card .location-details p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 12px;
+    }
+    .location-card .location-details .hours {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .location-card .location-details .hours strong {
+      color: var(--text);
+    }
+
+    /* ============================================
+       SOCIAL LINKS SECTION
+    ============================================ */
+    .social-section {
+      margin-top: 36px;
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 32px 36px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .social-section .section-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--primary);
+      font-weight: 800;
+    }
+    .social-section h2 {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      margin: 4px 0 6px;
+    }
+    .social-section p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 14px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text);
+      transition: .25s ease;
+    }
+    .social-links a i {
+      font-size: 18px;
+    }
+    .social-links a:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary);
+    }
+    .social-links a.facebook:hover {
+      background: #1877F2;
+      color: #fff;
+      border-color: #1877F2;
+    }
+    .social-links a.twitter:hover {
+      background: #000;
+      color: #fff;
+      border-color: #000;
+    }
+    .social-links a.instagram:hover {
+      background: linear-gradient(135deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+      color: #fff;
+      border-color: #C13584;
+    }
+    .social-links a.tiktok:hover {
+      background: #000;
+      color: #fff;
+      border-color: #000;
+    }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    footer {
+      background: #111217;
+      color: #fff;
+      padding: 55px 0 25px;
+      margin-top: 16px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 35px;
+    }
+    footer h3 {
+      font: 700 17px "Space Grotesk";
+      margin: 0 0 15px;
+    }
+    footer p,
+    footer a {
+      font-size: 13px;
+      color: #aeb1be;
+    }
+    footer a {
+      display: block;
+      margin: 8px 0;
+    }
+    footer a:hover {
+      color: #fff;
+    }
+    .footer-brand {
+      font: 700 22px "Space Grotesk";
+      margin-bottom: 10px;
+    }
+    .footer-bottom {
+      border-top: 1px solid #2b2c34;
+      margin-top: 38px;
+      padding-top: 18px;
+      color: #747783;
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    /* ============================================
+       DARK MODE
+    ============================================ */
+    body.dark {
+      --bg: #0D0E13;
+      --surface: #171821;
+      --text: #F0F1F6;
+      --muted: #A8ACB9;
+      --border: #2A2C36;
+      --lavender: #27284A;
+      --primary: #777AFF;
+      --primary-dark: #5B5FEF;
+      --shadow: 0 18px 50px rgba(0, 0, 0, .40);
+      --shadow-lg: 0 24px 60px rgba(0, 0, 0, .50);
+    }
+    body.dark header {
+      background: rgba(13, 14, 19, .92);
+      border-bottom-color: rgba(42, 44, 54, .9);
+    }
+    body.dark nav a {
+      color: #C8CBD6;
+    }
+    body.dark nav a:hover,
+    body.dark nav a.active {
+      background: #27284A;
+      color: #E9E7FF;
+    }
+    body.dark .brand img {
+      background: #171821;
+      border-color: var(--border);
+    }
+    body.dark .page-hero {
+      background: linear-gradient(135deg, #1A1B30, rgba(91, 95, 239, 0.05));
+    }
+    body.dark .page-hero .eyebrow {
+      background: #171821;
+      border-color: var(--border);
+      color: #AEB2FF;
+    }
+    body.dark .contact-card {
+      background: #171821;
+      border-color: var(--border);
+    }
+    body.dark .contact-card:hover {
+      border-color: #777AFF;
+    }
+    body.dark .contact-card .icon {
+      background: #27284A;
+      color: #AEB2FF;
+    }
+    body.dark .contact-card:hover .icon {
+      background: #777AFF;
+      color: #fff;
+    }
+    body.dark .contact-card .info p {
+      color: #A8ACB9;
+    }
+    body.dark .contact-card .info a {
+      color: #777AFF;
+    }
+    body.dark .location-card {
+      background: #171821;
+      border-color: var(--border);
+    }
+    body.dark .location-card iframe {
+      filter: brightness(0.8) contrast(1.1);
+    }
+    body.dark .location-card .location-details p {
+      color: #A8ACB9;
+    }
+    body.dark .location-card .location-details .hours {
+      color: #A8ACB9;
+    }
+    body.dark .location-card .location-details .hours strong {
+      color: #F0F1F6;
+    }
+    body.dark .social-section {
+      background: #171821;
+      border-color: var(--border);
+    }
+    body.dark .social-section p {
+      color: #A8ACB9;
+    }
+    body.dark .social-links a {
+      background: #0D0E13;
+      border-color: var(--border);
+      color: #F0F1F6;
+    }
+    body.dark .social-links a:hover {
+      border-color: #777AFF;
+    }
+    body.dark .menu {
+      background: #171821;
+      border-color: var(--border);
+      color: #fff;
+    }
+    body.dark footer {
+      background: #08090C;
+    }
+    body.dark footer p,
+    body.dark footer a {
+      color: #A8ACB9;
+    }
+    body.dark footer a:hover {
+      color: #fff;
+    }
+    body.dark .footer-bottom {
+      border-color: #2A2C36;
+    }
+    body.dark .announcement {
+      background: #050609;
+    }
+    body.dark .announcement strong {
+      color: var(--lime);
+    }
+
+    /* Theme toggle */
+    .theme-toggle {
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+      color: var(--text);
+      display: inline-grid;
+      place-items: center;
+      cursor: pointer;
+      font-size: 18px;
+      transition: .2s ease;
+      flex: none;
+    }
+    .theme-toggle:hover {
+      transform: translateY(-2px);
+      border-color: var(--primary);
+      box-shadow: 0 8px 20px rgba(91, 95, 239, .15);
+    }
+    .theme-toggle .sun {
+      display: none;
+    }
+    body.dark .theme-toggle .moon {
+      display: none;
+    }
+    body.dark .theme-toggle .sun {
+      display: block;
+    }
+
+    /* ============================================
+       RESPONSIVE
+    ============================================ */
+    @media(max-width:980px) {
+      nav {
+        display: none
+      }
+      .menu {
+        display: block
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .social-links a {
+        padding: 10px 18px;
+        font-size: 13px;
+      }
+    }
+
+    @media(max-width:620px) {
+      .container {
+        width: min(var(--max), calc(100% - 26px));
+      }
+      .brand {
+        min-width: 0;
+      }
+      .brand-text {
+        font-size: 14px;
+      }
+      .brand-text span {
+        display: none;
+      }
+      .page-hero {
+        padding: 34px 0 24px;
+      }
+      .page-hero h1 {
+        font-size: 30px;
+      }
+      .page-hero p {
+        font-size: 15px;
+      }
+      .contact-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+      }
+      .contact-card .icon {
+        width: 48px;
+        height: 48px;
+        font-size: 18px;
+      }
+      .location-card iframe {
+        height: 200px;
+      }
+      .location-card .location-details {
+        padding: 18px 20px;
+      }
+      .social-section {
+        padding: 24px 20px;
+      }
+      .social-section h2 {
+        font-size: 22px;
+      }
+      .social-links {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .social-links a {
+        justify-content: center;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================
+  ANNOUNCEMENT BAR
+  ============================================ -->
+  <div class="announcement">
+    <div class="announcement-track">
+      <span><strong>FALL 2026</strong> — BSCS &amp; BS English admissions open</span>
+      <span>•</span>
+      <span>Limited seats available for BSCS and BS English</span>
+      <span>•</span>
+      <span>First Merit List — Fall 2026</span>
+      <span>•</span>
+      <span>HSSC-I admission dates extended</span>
+      <span>•</span>
+    </div>
+  </div>
+
+  <!-- ============================================
+  HEADER
+  ============================================ -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="http://www.fgladc.edu.pk/">
+        <img src="http://www.fgladc.edu.pk/img/1662567147_fgladc-logo.jpg" alt="FGLADC logo">
+        <div class="brand-text">FG Liaquat Ali Degree College<span>Intermediate • Undergraduate</span></div>
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <a href="http://www.fgladc.edu.pk/">Home</a>
+        <a href="http://www.fgladc.edu.pk/programs/">Programs</a>
+        <a href="http://www.fgladc.edu.pk/">Admissions</a>
+        <a href="http://www.fgladc.edu.pk/downloads/">Downloads</a>
+        <a href="http://www.fgladc.edu.pk/about-college/">About</a>
+        <a href="http://www.fgladc.edu.pk/teaching-faculty/">Faculty</a>
+        <a class="active" href="http://www.fgladc.edu.pk/conduct-us/">Contact</a>
+        <a class="login" href="http://www.fgladc.edu.pk/mylogin.php">Login ↗</a>
+      </nav>
+
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">
+        <span class="moon">☾</span>
+        <span class="sun">☀</span>
+      </button>
+      <button class="menu" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <!-- ============================================
+  PAGE HERO
+  ============================================ -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="http://www.fgladc.edu.pk/">Home</a>
+        <span class="sep">/</span>
+        <span>Contact Us</span>
+      </div>
+      <div class="eyebrow">
+        <span class="dot"></span> GET IN TOUCH
+      </div>
+      <h1>Contact <em>Us</em></h1>
+      <p>We're here to help. Reach out to us through any of the channels below, or visit us on campus.</p>
+    </div>
+  </section>
+
+  <!-- ============================================
+  CONTACT SECTION
+  ============================================ -->
+  <section class="contact-section">
+    <div class="container">
+
+      <div class="contact-grid">
+
+        <!-- ===== LEFT: CONTACT CARDS ===== -->
+        <div class="contact-cards">
+
+          <!-- Address -->
+          <div class="contact-card">
+            <div class="icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="info">
+              <h3>Address</h3>
+              <p>FG Liaquat Ali Degree College for Boys, Peshawar Road, Rawalpindi</p>
+            </div>
+          </div>
+
+          <!-- Phone -->
+          <div class="contact-card">
+            <div class="icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="info">
+              <h3>Phone</h3>
+              <p><a href="tel:+92515492888">+92 51 5492888</a></p>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="contact-card">
+            <div class="icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="info">
+              <h3>Email</h3>
+              <p><a href="mailto:fgladc@yahoo.com">fgladc@yahoo.com</a></p>
+            </div>
+          </div>
+
+          <!-- Hours -->
+          <div class="contact-card">
+            <div class="icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="info">
+              <h3>Office Hours</h3>
+              <p>Monday – Friday · 8:00 AM – 3:00 PM</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ===== RIGHT: MAP WITH EMBED ===== -->
+        <div class="location-card">
+          <!-- Google Maps Embed -->
+          <iframe
+            src="https://maps.google.com/maps?q=Bahadur+Khan+Rd,+Rawalpindi,+46000,+Pakistan&output=embed"
+            width="100%"
+            height="260"
+            style="border:0; display:block;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+
+          <div class="location-details">
+            <h3>Visit Our Campus</h3>
+            <p>Located on Peshawar Road, Rawalpindi — easily accessible from all parts of the city.</p>
+            <div class="hours">
+              <strong>🕐 Office Hours:</strong> Monday – Friday, 8:00 AM – 3:00 PM
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ============================================
+      SOCIAL LINKS
+      ============================================ -->
+      <div class="social-section">
+        <div class="section-label">🌐 Connect With Us</div>
+        <h2>Follow Us Online</h2>
+        <p>Stay updated with the latest news, events, and announcements from FGLADC.</p>
+
+        <div class="social-links">
+          <a href="https://www.facebook.com/people/FG-Liaquat-Ali-Degree-College-For-Boys-Peshawar-Road-Rwp/100057185721181/" class="facebook" target="_blank">
+            <i class="fab fa-facebook-f"></i> Facebook
+          </a>
+          <a href="https://twitter.com" class="twitter" target="_blank">
+            <i class="fab fa-twitter"></i> Twitter
+          </a>
+          <a href="https://www.instagram.com/" class="instagram" target="_blank">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+          <a href="https://www.tiktok.com" class="tiktok" target="_blank">
+            <i class="fab fa-tiktok"></i> TikTok
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================
+  FOOTER
+  ============================================ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">FG Liaquat Ali Degree College</div>
+          <p>Intermediate &amp; undergraduate education with a modern, purposeful learning experience.</p>
+          <p>Monday–Friday · 8:00 AM–3:00 PM</p>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <a href="http://www.fgladc.edu.pk/programs/">Programs</a>
+          <a href="http://www.fgladc.edu.pk/about-college/">About</a>
+          <a href="http://www.fgladc.edu.pk/teaching-faculty/">Faculty</a>
+          <a href="http://www.fgladc.edu.pk/downloads/">Downloads</a>
+        </div>
+        <div>
+          <h3>Admissions</h3>
+          <a href="http://www.fgladc.edu.pk/">Fall 2026</a>
+          <a href="http://www.fgladc.edu.pk/required-documents-for-hssc/">HSSC Documents</a>
+          <a href="http://www.fgladc.edu.pk/procedure/">Admission Procedure</a>
+          <a href="http://www.fgladc.edu.pk/policies/">Policies</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p>+92 51 5492888</p>
+          <p>fgladc@yahoo.com</p>
+          <a href="http://www.fgladc.edu.pk/conduct-us/" style="color:var(--primary);">Contact page →</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© FG Liaquat Ali Degree College. All rights reserved.</span>
+        <span>Designed with a modern academic + Gen Z visual language.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+  SCRIPTS
+  ============================================ -->
+  <script>
+    // ---- Theme Toggle ----
+    const savedTheme = localStorage.getItem('fgladc-theme');
+    if (savedTheme === 'dark') document.body.classList.add('dark');
+
+    function toggleTheme() {
+      const isDark = document.body.classList.toggle('dark');
+      localStorage.setItem('fgladc-theme', isDark ? 'dark' : 'light');
+      const button = document.querySelector('.theme-toggle');
+      if (button) button.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+
+    // ---- Mobile Menu ----
+    function toggleMenu() {
+      const nav = document.querySelector('nav');
+      const open = nav.style.display === 'flex';
+      nav.style.display = open ? '' : 'flex';
+      if (!open) {
+        nav.style.position = 'absolute';
+        nav.style.top = '76px';
+        nav.style.left = '13px';
+        nav.style.right = '13px';
+        nav.style.padding = '12px';
+        nav.style.background = '#fff';
+        nav.style.border = '1px solid #E5E7EF';
+        nav.style.borderRadius = '18px';
+        nav.style.boxShadow = '0 18px 50px rgba(35,38,80,.12)';
+        nav.style.flexDirection = 'column';
+        nav.style.alignItems = 'stretch';
+      }
+    }
+
+    // ---- Close menu on outside click ----
+    document.addEventListener('click', function(e) {
+      const nav = document.querySelector('nav');
+      const menuBtn = document.querySelector('.menu');
+      if (nav && nav.style.display === 'flex' && !nav.contains(e.target) && !menuBtn.contains(e.target)) {
+        nav.style.display = '';
+        nav.style.position = '';
+        nav.style.top = '';
+        nav.style.left = '';
+        nav.style.right = '';
+        nav.style.padding = '';
+        nav.style.border = '';
+        nav.style.borderRadius = '';
+        nav.style.boxShadow = '';
+        nav.style.flexDirection = '';
+        nav.style.alignItems = '';
+      }
+    });
+  </script>
+
+</body>
+</html>

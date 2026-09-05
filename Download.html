@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Downloads — FG Liaquat Ali Degree College</title>
+  <title>Downloads</title>
   <meta name="description" content="Download admission forms, merit lists, and important documents from FG Liaquat Ali Degree College.">
 
   <!-- Favicon -->
@@ -17,19 +17,25 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <style>
+    /* ============================================
+       ROOT VARIABLES — DARK THEME BY DEFAULT
+    ============================================ */
     :root {
-      --primary: #5B5FEF;
-      --primary-dark: #3538A8;
+      --primary: #777AFF;
+      --primary-dark: #5B5FEF;
       --cyan: #22D3EE;
       --lime: #B8F34A;
-      --lavender: #E9E7FF;
-      --bg: #F8F9FC;
-      --surface: #FFFFFF;
-      --text: #171821;
-      --muted: #626878;
-      --border: #E5E7EF;
-      --shadow: 0 18px 50px rgba(35, 38, 80, .10);
-      --shadow-lg: 0 24px 60px rgba(35, 38, 80, .15);
+      --lavender: #1a1a2e;
+      
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --text: #f0f0f0;
+      --muted: #999999;
+      --border: #2a2a2a;
+      
+      --shadow: 0 18px 50px rgba(0, 0, 0, .60);
+      --shadow-lg: 0 24px 60px rgba(0, 0, 0, .70);
+      
       --radius: 22px;
       --radius-sm: 12px;
       --max: 1180px;
@@ -107,9 +113,9 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(248, 249, 252, .92);
+      background: rgba(10, 10, 10, .92);
       backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(229, 231, 239, .8);
+      border-bottom: 1px solid rgba(42, 42, 42, .8);
       transition: background .3s ease, border-color .3s ease;
     }
     .nav {
@@ -130,13 +136,14 @@
       height: 52px;
       object-fit: contain;
       border-radius: 14px;
-      background: #fff;
+      background: #141414;
       border: 1px solid var(--border);
     }
     .brand-text {
       font-family: "Space Grotesk", sans-serif;
       font-weight: 700;
       line-height: 1.05;
+      color: #f0f0f0;
     }
     .brand-text span {
       display: block;
@@ -160,19 +167,19 @@
       border-radius: 12px;
       font-size: 14px;
       font-weight: 600;
-      color: #454957;
+      color: #a0a0b0;
       transition: .2s ease;
     }
     nav a:hover,
     nav a.active {
       background: var(--lavender);
-      color: var(--primary-dark);
+      color: #e9e7ff;
     }
     .login {
       background: var(--primary);
       color: #fff !important;
       padding: 11px 17px !important;
-      box-shadow: 0 8px 20px rgba(91, 95, 239, .25);
+      box-shadow: 0 8px 20px rgba(119, 122, 255, .25);
     }
     .login:hover {
       background: var(--primary-dark) !important;
@@ -228,7 +235,7 @@
     }
     nav .dropdown-menu a:hover {
       background: var(--lavender);
-      color: var(--primary-dark);
+      color: #e9e7ff;
     }
     nav .dropdown-menu a:first-child {
       border-radius: var(--radius-sm) var(--radius-sm) 0 0;
@@ -240,11 +247,12 @@
     .menu {
       display: none;
       border: 0;
-      background: #fff;
+      background: #141414;
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 10px 12px;
       font-size: 20px;
+      color: #f0f0f0;
       cursor: pointer;
     }
 
@@ -253,7 +261,7 @@
     ============================================ */
     .page-header {
       padding: 60px 0 40px;
-      background: linear-gradient(135deg, var(--lavender) 0%, var(--bg) 100%);
+      background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0a 100%);
       border-bottom: 1px solid var(--border);
     }
     .page-header .kicker {
@@ -269,6 +277,7 @@
       font-size: clamp(40px, 5vw, 60px);
       letter-spacing: -.04em;
       margin: 0 0 10px;
+      color: #f0f0f0;
     }
     .page-header h1 .highlight {
       color: var(--primary);
@@ -313,6 +322,7 @@
       font-family: "Space Grotesk", sans-serif;
       font-size: 28px;
       margin: 0 0 8px;
+      color: #f0f0f0;
     }
     .downloads-section .subtitle {
       color: var(--muted);
@@ -336,7 +346,7 @@
       font-size: 15px;
     }
     .download-table thead {
-      background: var(--bg);
+      background: #111218;
       border-bottom: 2px solid var(--border);
     }
     .download-table th {
@@ -352,12 +362,13 @@
       padding: 16px 24px;
       border-bottom: 1px solid var(--border);
       vertical-align: middle;
+      color: var(--text);
     }
     .download-table tr:last-child td {
       border-bottom: none;
     }
     .download-table tr:hover {
-      background: var(--lavender);
+      background: #1a1b26;
       transition: .2s ease;
     }
 
@@ -377,20 +388,20 @@
       flex-shrink: 0;
     }
     .file-icon.pdf {
-      background: #fde8e8;
-      color: #d32f2f;
+      background: #2a1515;
+      color: #ef5350;
     }
     .file-icon.jpg {
-      background: #e8f0fe;
-      color: #1a73e8;
+      background: #15203a;
+      color: #42a5f5;
     }
     .file-icon.png {
-      background: #e8f5e9;
-      color: #2e7d32;
+      background: #152a1a;
+      color: #66bb6a;
     }
     .file-icon.doc {
-      background: #e3f2fd;
-      color: #1565c0;
+      background: #15203a;
+      color: #42a5f5;
     }
 
     .download-table .file-name {
@@ -427,7 +438,7 @@
     .download-btn:hover {
       background: var(--primary-dark);
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(91, 95, 239, .25);
+      box-shadow: 0 8px 20px rgba(119, 122, 255, .25);
     }
     .download-btn svg {
       width: 18px;
@@ -439,7 +450,7 @@
        FOOTER
     ============================================ */
     footer {
-      background: #111217;
+      background: #08090C;
       color: #fff;
       padding: 55px 0 25px;
     }
@@ -451,11 +462,12 @@
     footer h3 {
       font: 700 17px "Space Grotesk";
       margin: 0 0 15px;
+      color: #f0f0f0;
     }
     footer p,
     footer a {
       font-size: 13px;
-      color: #aeb1be;
+      color: #a8acb9;
     }
     footer a {
       display: block;
@@ -467,9 +479,10 @@
     .footer-brand {
       font: 700 22px "Space Grotesk";
       margin-bottom: 10px;
+      color: #f0f0f0;
     }
     .footer-bottom {
-      border-top: 1px solid #2b2c34;
+      border-top: 1px solid #2a2c36;
       margin-top: 38px;
       padding-top: 18px;
       color: #747783;
@@ -480,95 +493,105 @@
     }
 
     /* ============================================
-       DARK MODE
+       LIGHT MODE (optional toggle)
     ============================================ */
-    body.dark {
-      --bg: #0D0E13;
-      --surface: #171821;
-      --text: #F0F1F6;
-      --muted: #A8ACB9;
-      --border: #2A2C36;
-      --lavender: #27284A;
-      --primary: #777AFF;
-      --primary-dark: #5B5FEF;
-      --shadow: 0 18px 50px rgba(0, 0, 0, .40);
-      --shadow-lg: 0 24px 60px rgba(0, 0, 0, .50);
+    body.light {
+      --bg: #F8F9FC;
+      --surface: #FFFFFF;
+      --text: #171821;
+      --muted: #626878;
+      --border: #E5E7EF;
+      --lavender: #E9E7FF;
+      --primary: #5B5FEF;
+      --primary-dark: #3538A8;
+      --shadow: 0 18px 50px rgba(35, 38, 80, .10);
+      --shadow-lg: 0 24px 60px rgba(35, 38, 80, .15);
     }
-    body.dark header {
-      background: rgba(13, 14, 19, .92);
-      border-bottom-color: rgba(42, 44, 54, .9);
+    body.light header {
+      background: rgba(248, 249, 252, .92);
+      border-bottom-color: rgba(229, 231, 239, .8);
     }
-    body.dark nav a {
-      color: #C8CBD6;
+    body.light nav a {
+      color: #454957;
     }
-    body.dark nav a:hover,
-    body.dark nav a.active {
-      background: #27284A;
-      color: #E9E7FF;
+    body.light nav a:hover,
+    body.light nav a.active {
+      background: var(--lavender);
+      color: var(--primary-dark);
     }
-    body.dark nav .dropdown-menu {
-      background: #171821;
+    body.light .brand img {
+      background: #fff;
       border-color: var(--border);
     }
-    body.dark nav .dropdown-menu a {
-      color: #F0F1F6;
+    body.light .brand-text {
+      color: var(--text);
     }
-    body.dark nav .dropdown-menu a:hover {
-      background: #27284A;
-      color: #E9E7FF;
+    body.light .page-header {
+      background: linear-gradient(135deg, var(--lavender) 0%, var(--bg) 100%);
     }
-    body.dark .brand img {
-      background: #171821;
-      border-color: var(--border);
+    body.light .page-header h1 {
+      color: var(--text);
     }
-    body.dark .page-header {
-      background: linear-gradient(135deg, #1a1b26 0%, var(--bg) 100%);
-    }
-    body.dark .download-table-wrap {
+    body.light .download-table-wrap {
       background: var(--surface);
       border-color: var(--border);
     }
-    body.dark .download-table thead {
-      background: #111218;
+    body.light .download-table thead {
+      background: var(--bg);
     }
-    body.dark .download-table td {
+    body.light .download-table td {
+      color: var(--text);
+    }
+    body.light .download-table tr:hover {
+      background: var(--lavender);
+    }
+    body.light .download-table .file-name {
+      color: var(--text);
+    }
+    body.light .download-table .file-name:hover {
+      color: var(--primary);
+    }
+    body.light .file-icon.pdf {
+      background: #fde8e8;
+      color: #d32f2f;
+    }
+    body.light .file-icon.jpg {
+      background: #e8f0fe;
+      color: #1a73e8;
+    }
+    body.light .file-icon.png {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+    body.light .file-icon.doc {
+      background: #e3f2fd;
+      color: #1565c0;
+    }
+    body.light .menu {
+      background: #fff;
       border-color: var(--border);
+      color: var(--text);
     }
-    body.dark .download-table tr:hover {
-      background: #1a1b26;
+    body.light footer {
+      background: #111217;
     }
-    body.dark .download-table .file-name {
-      color: #F0F1F6;
+    body.light footer h3 {
+      color: #fff;
     }
-    body.dark .download-table .file-name:hover {
-      color: #777AFF;
+    body.light footer p,
+    body.light footer a {
+      color: #aeb1be;
     }
-    body.dark .download-table .file-meta {
-      color: #A8ACB9;
+    body.light .footer-bottom {
+      border-color: #2b2c34;
     }
-    body.dark .menu {
-      background: #171821;
+    body.light .theme-toggle {
+      background: var(--surface);
       border-color: var(--border);
-      color: #fff;
+      color: var(--text);
     }
-    body.dark .announcement {
-      background: var(--marquee-color);
-    }
-    body.dark .announcement strong {
-      color: #fff;
-    }
-    body.dark footer {
-      background: #08090C;
-    }
-    body.dark footer p,
-    body.dark footer a {
-      color: #A8ACB9;
-    }
-    body.dark footer a:hover {
-      color: #fff;
-    }
-    body.dark .footer-bottom {
-      border-color: #2A2C36;
+    body.light .theme-toggle:hover {
+      border-color: var(--primary);
     }
 
     /* Theme toggle */
@@ -589,15 +612,15 @@
     .theme-toggle:hover {
       transform: translateY(-2px);
       border-color: var(--primary);
-      box-shadow: 0 8px 20px rgba(91, 95, 239, .15);
+      box-shadow: 0 8px 20px rgba(119, 122, 255, .15);
     }
     .theme-toggle .sun {
       display: none;
     }
-    body.dark .theme-toggle .moon {
+    body.light .theme-toggle .moon {
       display: none;
     }
-    body.dark .theme-toggle .sun {
+    body.light .theme-toggle .sun {
       display: block;
     }
 
@@ -620,7 +643,7 @@
         background: var(--surface);
         border: 1px solid var(--border);
         border-radius: 18px;
-        box-shadow: 0 18px 50px rgba(35, 38, 80, .12);
+        box-shadow: 0 18px 50px rgba(0, 0, 0, .4);
         gap: 4px;
       }
       nav.open {
@@ -648,7 +671,7 @@
         padding: 8px 16px;
         font-size: 14px;
       }
-      body.dark nav .dropdown-menu {
+      body.light nav .dropdown-menu {
         background: transparent;
       }
       nav .dropdown-toggle i {
@@ -962,15 +985,20 @@
   SCRIPTS
   ============================================ -->
   <script>
-    // ---- Theme Toggle ----
+    // ---- Default to dark mode ----
     const savedTheme = localStorage.getItem('fgladc-theme');
-    if (savedTheme === 'dark') document.body.classList.add('dark');
+    if (savedTheme === 'light') {
+      document.body.classList.add('light');
+    } else {
+      document.body.classList.remove('light');
+      // Dark is default
+    }
 
     function toggleTheme() {
-      const isDark = document.body.classList.toggle('dark');
-      localStorage.setItem('fgladc-theme', isDark ? 'dark' : 'light');
+      const isLight = document.body.classList.toggle('light');
+      localStorage.setItem('fgladc-theme', isLight ? 'light' : 'dark');
       const button = document.querySelector('.theme-toggle');
-      if (button) button.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      if (button) button.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
     }
 
     // ---- Mobile Menu Toggle ----

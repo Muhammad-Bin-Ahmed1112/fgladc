@@ -1,6 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About the College</title>
@@ -10,13 +8,101 @@
   <link rel="shortcut icon" href="https://muhammad-bin-ahmed1112.github.io/fgladc/assests/images/FGLADC.png" type="image/png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
 
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <style>
+    /* ============================================
+       PRELOADER STYLES — Polygon Loader
+       Instantly visible, hides on page load
+    ============================================ */
+    
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #preloader {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: #0D0E13;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 999999;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    #preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    /* Polygon Loader - Blue & Lime theme */
+    .polygon-loader {
+      display: inline-grid;
+      width: 90px;
+      aspect-ratio: 1;
+      clip-path: polygon(100% 50%, 85.36% 85.36%, 50% 100%, 14.64% 85.36%, 0% 50%, 14.64% 14.64%, 50% 0%, 85.36% 14.64%);
+      background: #5B5FEF;
+      animation: l2 6s infinite linear;
+    }
+
+    .polygon-loader:before,
+    .polygon-loader:after {
+      content: "";
+      grid-area: 1/1;
+      background: #3538A8;
+      clip-path: polygon(100% 50%, 81.17% 89.09%, 38.87% 98.75%, 4.95% 71.69%, 4.95% 28.31%, 38.87% 1.25%, 81.17% 10.91%);
+      margin: 10%;
+      animation: inherit;
+      animation-duration: 10s;
+    }
+
+    .polygon-loader:after {
+      background: #B8F34A;
+      clip-path: polygon(100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%, 25% 6.7%, 75% 6.7%);
+      margin: 20%;
+      animation-duration: 3s;
+      animation-direction: reverse;
+    }
+
+    @keyframes l2 {
+      to {
+        rotate: 1turn;
+      }
+    }
+
+    /* Loader text */
+    #preloader .loader-text {
+      margin-top: 30px;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #F0F1F6;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Light theme preloader */
+    body:not(.dark) #preloader {
+      background: #F8F9FC;
+    }
+
+    body:not(.dark) #preloader .loader-text {
+      color: #171821;
+    }
+
     /* ============================================
        ROOT VARIABLES
     ============================================ */
@@ -849,6 +935,14 @@
 <body class="dark">
 
   <!-- ============================================
+  PRELOADER — Polygon Loader, hides on page load
+  ============================================ -->
+  <div id="preloader">
+    <div class="polygon-loader"></div>
+    <div class="loader-text">Loading</div>
+  </div>
+
+  <!-- ============================================
   ANNOUNCEMENT BAR — #d72d32 COLOR
   ============================================ -->
   <div class="announcement">
@@ -894,8 +988,8 @@
      
       </nav>
 
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">
-        <span class="moon">☾</span>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Switch to light mode" title="Switch theme">
+        <span class="moon">☀</span>
         <span class="sun">☀</span>
       </button>
       <button class="menu" onclick="toggleMenu()" aria-label="Open menu">☰</button>
@@ -929,7 +1023,7 @@
 
         <!-- ===== HISTORY CARD ===== -->
         <article class="content-card">
-          <span class="pill">📖 Our Story</span>
+          <span class="pill">Our Story</span>
           <h2>A Legacy of <span class="highlight">Quality Education</span></h2>
 
           <p>E.G. Liaquat Ali Degree College is one of the leading colleges in the Rawalpindi region. The college is a premier public sector institution which is imparting quality education to a great number of students at Intermediate and Degree level under the auspices of the Directorate of Federal Government Educational Institutions (Cants and Garrison), Ministry of Defence, Rawalpindi.</p>
@@ -965,7 +1059,7 @@
 
         <!-- ===== MISSION & VISION CARD ===== -->
         <article class="content-card">
-          <span class="pill">🎯 Purpose &amp; Direction</span>
+          <span class="pill">Purpose &amp; Direction</span>
           <h2>Mission &amp; <span class="highlight">Vision</span></h2>
 
           <p>The Mission and Vision of the college is to establish the dignity and worth of each student, and to develop their personality according to Islamic Ideology.</p>
@@ -992,7 +1086,7 @@
 
         <!-- ===== CAMPUS & FACILITIES CARD ===== -->
         <article class="content-card">
-          <span class="pill">🏛️ Campus Life</span>
+          <span class="pill">Campus Life</span>
           <h2>A Campus Built for <span class="highlight">Growth</span></h2>
 
           <p>Located at a prime site on Peshawar Road, Rawalpindi, FG Liaquat Ali Degree College is housed in a beautiful and purpose-built campus equipped with all the necessary pre-requisites for its students: spacious classrooms, well-equipped science and computer labs, a big and well-stocked library with thousands of books on various subjects, an advanced digital library, a huge auditorium, a state of the art sports ground and a well-maintained Cafeteria. A mosque has also been built recently to meet the religious needs of both the students and the faculty.</p>
@@ -1019,7 +1113,7 @@
 
         <!-- ===== PERSONALITY DEVELOPMENT CARD ===== -->
         <article class="content-card">
-          <span class="pill">🌟 Beyond Academics</span>
+          <span class="pill"> Beyond Academics</span>
           <h2>Shaping <span class="highlight">Complete</span> Personalities</h2>
 
           <p>The college lays great stress on overall personality development of its students and inspires their intellectual, social, spiritual and physical progress. It aims to chisel their innate talents, polish their progressive skills, and unshackle their latent potential to transform them into useful, active and creative citizens of Pakistan.</p>
@@ -1028,19 +1122,12 @@
 
           <p>The repute of the college has soared higher with each passing year. The hard work, dedication and the spirit of selflessness of the team — the Principal, the Faculty, the NTS, the Students and the Parents — is responsible for the pride of the College.</p>
 
-          <p style="margin-top:16px; padding:16px 20px; background:var(--lavender); border-radius:12px; color:var(--primary-dark); font-weight:600;">
-            💡 The Principal is the Head of the institution, who is empowered to run day to day administration of the college and to implement policy directives of the FGEI Directorate. Principal's decisions and orders in all matters of the college are binding on all students on roll.
+          <p style="margin-top:16px; padding:16px 20px; background:var(--lavender); border-radius:12px; color:var(--primary-dark); font-weight:600;">The Principal is the Head of the institution, who is empowered to run day to day administration of the college and to implement policy directives of the FGEI Directorate. Principal's decisions and orders in all matters of the college are binding on all students on roll.
           </p>
         </article>
 
         <!-- ===== CTA BANNER ===== -->
-        <div class="cta-banner">
-          <div>
-            <h2>Ready to be part of this journey?</h2>
-            <p>Explore our programs, check admission updates, and take the next step in your academic journey.</p>
-          </div>
-          <a class="btn-lime" href="https://muhammad-bin-ahmed1112.github.io/fgladc/">Explore Programs →</a>
-        </div>
+        
 
       </div>
     </div>
@@ -1091,7 +1178,37 @@
   SCRIPTS
   ============================================ -->
   <script>
-    // ---- Theme Toggle ----
+    // ============================================
+    // PRELOADER — Hides exactly when page loads
+    // ============================================
+    
+    let preloaderHidden = false;
+
+    function hidePreloader() {
+      if (preloaderHidden) return;
+      preloaderHidden = true;
+
+      const preloader = document.getElementById('preloader');
+      if (!preloader) return;
+
+      preloader.classList.add('hidden');
+
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 700);
+    }
+
+    // Hide preloader as soon as page is fully loaded
+    window.addEventListener('load', function() {
+      hidePreloader();
+    });
+
+    // Safety fallback — max 5 seconds
+    setTimeout(hidePreloader, 5000);
+
+    // ============================================
+    // THEME TOGGLE
+    // ============================================
     const savedTheme = localStorage.getItem('fgladc-theme');
     if (savedTheme === 'dark') document.body.classList.add('dark');
 
@@ -1102,13 +1219,15 @@
       if (button) button.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
     }
 
-    // ---- Mobile Menu Toggle ----
+    // ============================================
+    // MOBILE MENU TOGGLE
+    // ============================================
     function toggleMenu() {
       const nav = document.querySelector('nav');
       nav.classList.toggle('open');
     }
 
-    // ---- Mobile Dropdown Toggle ----
+    // Mobile Dropdown Toggle
     document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
       toggle.addEventListener('click', function(e) {
         e.preventDefault();
@@ -1119,7 +1238,7 @@
       });
     });
 
-    // ---- Close dropdowns when clicking outside ----
+    // Close dropdowns when clicking outside
     document.addEventListener('click', function(e) {
       if (window.innerWidth <= 980) {
         document.querySelectorAll('.dropdown.open').forEach(dropdown => {
@@ -1130,7 +1249,7 @@
       }
     });
 
-    // ---- Close menu on outside click ----
+    // Close menu on outside click
     document.addEventListener('click', function(e) {
       const nav = document.querySelector('nav');
       const menuBtn = document.querySelector('.menu');
@@ -1140,5 +1259,4 @@
     });
   </script>
 
-</body>
-</html>
+</body></html>

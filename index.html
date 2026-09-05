@@ -10,19 +10,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
   <style>
     /* ============================================
-       PRELOADER STYLES — Polygon Loader with Rubix Timing (3 sec)
-       Instantly visible, ZERO delay
+       PRELOADER STYLES — Polygon Loader 
+       Instantly visible, ZERO delay, 3 sec minimum
     ============================================ */
     
-    /* CRITICAL: Hide everything until preloader is ready */
-    html {
-      visibility: hidden;
-    }
+    /* NO html { visibility: hidden; } — REMOVED */
     
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      color: var(--text);
+      background: var(--bg);
+      font-family: Inter, system-ui, sans-serif;
+      line-height: 1.6;
+      transition: background .3s ease, color .3s ease;
+    }
+
     #preloader {
       position: fixed;
-      top: 0;
-      left: 0;
+      inset: 0;
       width: 100%;
       height: 100%;
       background: #0D0E13;
@@ -30,15 +39,17 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      z-index: 99999;
+      z-index: 999999;
       opacity: 1;
       visibility: visible;
-      transition: opacity 0.6s ease, visibility 0.6s ease;
+      pointer-events: all;
     }
 
     #preloader.hidden {
       opacity: 0;
       visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
     }
 
     /* Polygon Loader - Blue & Lime theme */
@@ -113,26 +124,6 @@
       --shadow: 0 18px 50px rgba(35, 38, 80, .10);
       --radius: 22px;
       --max: 1180px;
-    }
-
-    /* Show html when preloader is done */
-    html.loaded {
-      visibility: visible;
-    }
-
-    body {
-      margin: 0;
-      color: var(--text);
-      background: var(--bg);
-      font-family: Inter, system-ui, sans-serif;
-      line-height: 1.6;
-      transition: background .3s ease, color .3s ease;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    body.loaded {
-      opacity: 1;
     }
 
     a {
@@ -1192,8 +1183,7 @@
 
 <body>
   <!-- ============================================
-  PRELOADER — Polygon Loader with Rubix Timing (3 sec)
-  Instantly visible, ZERO delay
+  PRELOADER — Polygon Loader, Instantly visible, 3 sec min
   ============================================ -->
   <div id="preloader">
     <div class="polygon-loader"></div>
@@ -1452,66 +1442,35 @@
 
   <script>
     // ============================================
-    // PRELOADER — Polygon Loader with Rubix Timing (3 sec)
-    // Instantly visible, ZERO delay
+    // PRELOADER — Polygon Loader, Instantly visible, 3 sec min
     // ============================================
     
-    // CRITICAL: Show html immediately when DOM is ready
-    // This ensures preloader is visible as soon as possible
-    document.addEventListener('DOMContentLoaded', function() {
-      // html is already visible because we removed visibility:hidden
-      // But we need to make sure preloader is visible
-      const preloader = document.getElementById('preloader');
-      if (preloader) {
-        preloader.style.opacity = '1';
-        preloader.style.visibility = 'visible';
-      }
-    });
-
     let preloaderHidden = false;
+    const preloaderStart = performance.now();
 
-    // Hide preloader when everything is loaded
-    window.addEventListener('load', function() {
+    function hidePreloader() {
+      if (preloaderHidden) return;
+      preloaderHidden = true;
+
       const preloader = document.getElementById('preloader');
-      const body = document.body;
-      const html = document.documentElement;
-      const startTime = performance.now();
+      if (!preloader) return;
 
-      function hidePreloader() {
-        if (preloaderHidden) return;
-        preloaderHidden = true;
-        preloader.classList.add('hidden');
-        body.classList.add('loaded');
-        html.classList.add('loaded');
+      preloader.classList.add('hidden');
 
-        setTimeout(function() {
-          preloader.style.display = 'none';
-        }, 700);
-      }
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 700);
+    }
 
-      const elapsed = performance.now() - startTime;
-      const minDisplayTime = 3000; // 3 seconds minimum (Rubix timing)
-
-      if (elapsed >= minDisplayTime) {
-        hidePreloader();
-      } else {
-        const remainingTime = minDisplayTime - elapsed;
-        setTimeout(hidePreloader, remainingTime);
-      }
+    // When page fully loads
+    window.addEventListener('load', function() {
+      const elapsed = performance.now() - preloaderStart;
+      const remaining = Math.max(0, 3000 - elapsed);
+      setTimeout(hidePreloader, remaining);
     });
 
-    // Fallback: hide after 4 seconds max
-    setTimeout(function() {
-      const preloader = document.getElementById('preloader');
-      if (preloader && !preloader.classList.contains('hidden')) {
-        preloader.classList.add('hidden');
-        document.body.classList.add('loaded');
-        document.documentElement.classList.add('loaded');
-        setTimeout(function() {
-          preloader.style.display = 'none';
-        }, 700);
-      }
-    }, 4000);
+    // Safety fallback — max 4 seconds
+    setTimeout(hidePreloader, 4000);
 
     // ============================================
     // THEME TOGGLE

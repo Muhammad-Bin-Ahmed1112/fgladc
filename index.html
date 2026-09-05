@@ -10,7 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
   <style>
     /* ============================================
-       PRELOADER STYLES — Rubix Cube with 3-sec timing
+       PRELOADER STYLES — Polygon Loader with Rubix Timing (3 sec)
+       Instantly visible, no delay
     ============================================ */
     #preloader {
       position: fixed;
@@ -34,47 +35,39 @@
       visibility: hidden;
     }
 
-    /* Rubix Cube Loader - Matching Original Website */
-    .rubix-cube {
-      width: 80px;
-      height: 80px;
+    /* Polygon Loader - Blue & Lime theme (same as before) */
+    .polygon-loader {
       display: inline-grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(3, 1fr);
-      gap: 3px;
-      transform: rotateX(45deg) rotateZ(45deg);
-      animation: rubix-spin 6s infinite linear;
-      transform-style: preserve-3d;
-    }
-
-    .rubix-cube .layer {
-      border-radius: 2px;
+      width: 90px;
+      aspect-ratio: 1;
+      clip-path: polygon(100% 50%, 85.36% 85.36%, 50% 100%, 14.64% 85.36%, 0% 50%, 14.64% 14.64%, 50% 0%, 85.36% 14.64%);
       background: #5B5FEF;
-      animation: rubix-color 3s infinite alternate;
+      animation: l2 6s infinite linear;
     }
 
-    .rubix-cube .layer:nth-child(1) { animation-delay: 0.0s; }
-    .rubix-cube .layer:nth-child(2) { animation-delay: 0.1s; }
-    .rubix-cube .layer:nth-child(3) { animation-delay: 0.2s; }
-    .rubix-cube .layer:nth-child(4) { animation-delay: 0.3s; }
-    .rubix-cube .layer:nth-child(5) { animation-delay: 0.4s; }
-    .rubix-cube .layer:nth-child(6) { animation-delay: 0.5s; }
-    .rubix-cube .layer:nth-child(7) { animation-delay: 0.6s; }
-    .rubix-cube .layer:nth-child(8) { animation-delay: 0.7s; }
-    .rubix-cube .layer:nth-child(9) { animation-delay: 0.8s; }
-
-    .rubix-cube .layer.color-1 { background: #B8F34A; }  /* Lime */
-    .rubix-cube .layer.color-2 { background: #5B5FEF; }  /* Primary Blue */
-    .rubix-cube .layer.color-3 { background: #3538A8; }  /* Dark Blue */
-
-    @keyframes rubix-spin {
-      from { transform: rotateX(0deg) rotateZ(0deg); }
-      to { transform: rotateX(360deg) rotateZ(360deg); }
+    .polygon-loader:before,
+    .polygon-loader:after {
+      content: "";
+      grid-area: 1/1;
+      background: #3538A8;
+      clip-path: polygon(100% 50%, 81.17% 89.09%, 38.87% 98.75%, 4.95% 71.69%, 4.95% 28.31%, 38.87% 1.25%, 81.17% 10.91%);
+      margin: 10%;
+      animation: inherit;
+      animation-duration: 10s;
     }
 
-    @keyframes rubix-color {
-      0% { opacity: 0.3; transform: scale(0.9); }
-      100% { opacity: 1; transform: scale(1); }
+    .polygon-loader:after {
+      background: #B8F34A;
+      clip-path: polygon(100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%, 25% 6.7%, 75% 6.7%);
+      margin: 20%;
+      animation-duration: 3s;
+      animation-direction: reverse;
+    }
+
+    @keyframes l2 {
+      to {
+        rotate: 1turn;
+      }
     }
 
     /* Loader text */
@@ -1188,20 +1181,11 @@
 
 <body>
   <!-- ============================================
-  PRELOADER — Rubix Cube with 3-second timing
+  PRELOADER — Polygon Loader with Rubix Timing (3 sec)
+  Instantly visible, no delay
   ============================================ -->
   <div id="preloader">
-    <div class="rubix-cube">
-      <div class="layer color-1"></div>
-      <div class="layer color-2"></div>
-      <div class="layer color-3"></div>
-      <div class="layer color-1"></div>
-      <div class="layer color-2"></div>
-      <div class="layer color-3"></div>
-      <div class="layer color-1"></div>
-      <div class="layer color-2"></div>
-      <div class="layer color-3"></div>
-    </div>
+    <div class="polygon-loader"></div>
     <div class="loader-text">Loading</div>
   </div>
 
@@ -1457,7 +1441,8 @@
 
   <script>
     // ============================================
-    // PRELOADER — Rubix Cube with 3-second timing
+    // PRELOADER — Polygon Loader with Rubix Timing (3 sec)
+    // Instantly visible, no delay
     // ============================================
     let preloaderHidden = false;
 
@@ -1478,7 +1463,7 @@
       }
 
       const elapsed = performance.now() - startTime;
-      const minDisplayTime = 3000; // 3 seconds minimum
+      const minDisplayTime = 3000; // 3 seconds minimum (Rubix timing)
 
       if (elapsed >= minDisplayTime) {
         hidePreloader();

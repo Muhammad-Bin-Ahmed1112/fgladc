@@ -11,7 +11,7 @@
   <style>
     /* ============================================
        PRELOADER STYLES — Polygon Loader 
-       Instantly visible, 1.5 sec minimum
+       Instantly visible, hides on page load
     ============================================ */
     
     html, body {
@@ -41,13 +41,13 @@
       opacity: 1;
       visibility: visible;
       pointer-events: all;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
     }
 
     #preloader.hidden {
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
-      transition: opacity 0.6s ease, visibility 0.6s ease;
     }
 
     /* Polygon Loader - Blue & Lime theme */
@@ -1181,7 +1181,7 @@
 
 <body>
   <!-- ============================================
-  PRELOADER — Polygon Loader, Instantly visible, 1.5 sec min
+  PRELOADER — Polygon Loader, hides on page load
   ============================================ -->
   <div id="preloader">
     <div class="polygon-loader"></div>
@@ -1440,11 +1440,11 @@
 
   <script>
     // ============================================
-    // PRELOADER — Polygon Loader, 1.5 sec minimum
+    // PRELOADER — Hides exactly when page loads
+    // No minimum time, just page load
     // ============================================
     
     let preloaderHidden = false;
-    const preloaderStart = performance.now();
 
     function hidePreloader() {
       if (preloaderHidden) return;
@@ -1460,14 +1460,13 @@
       }, 700);
     }
 
+    // Hide preloader as soon as page is fully loaded
     window.addEventListener('load', function() {
-      const elapsed = performance.now() - preloaderStart;
-      const remaining = Math.max(0, 1500 - elapsed); // 1.5 seconds minimum
-      setTimeout(hidePreloader, remaining);
+      hidePreloader();
     });
 
-    // Safety fallback — max 2.5 seconds
-    setTimeout(hidePreloader, 2500);
+    // Safety fallback — max 5 seconds (in case load event doesn't fire)
+    setTimeout(hidePreloader, 5000);
 
     // ============================================
     // THEME TOGGLE

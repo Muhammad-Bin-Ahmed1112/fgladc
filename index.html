@@ -11,10 +11,8 @@
   <style>
     /* ============================================
        PRELOADER STYLES — Polygon Loader 
-       Instantly visible, ZERO delay, 3 sec minimum
+       Instantly visible, 1.5 sec minimum
     ============================================ */
-    
-    /* NO html { visibility: hidden; } — REMOVED */
     
     html, body {
       margin: 0;
@@ -1183,7 +1181,7 @@
 
 <body>
   <!-- ============================================
-  PRELOADER — Polygon Loader, Instantly visible, 3 sec min
+  PRELOADER — Polygon Loader, Instantly visible, 1.5 sec min
   ============================================ -->
   <div id="preloader">
     <div class="polygon-loader"></div>
@@ -1442,7 +1440,7 @@
 
   <script>
     // ============================================
-    // PRELOADER — Polygon Loader, Instantly visible, 3 sec min
+    // PRELOADER — Polygon Loader, 1.5 sec minimum
     // ============================================
     
     let preloaderHidden = false;
@@ -1462,15 +1460,14 @@
       }, 700);
     }
 
-    // When page fully loads
     window.addEventListener('load', function() {
       const elapsed = performance.now() - preloaderStart;
-      const remaining = Math.max(0, 3000 - elapsed);
+      const remaining = Math.max(0, 1500 - elapsed); // 1.5 seconds minimum
       setTimeout(hidePreloader, remaining);
     });
 
-    // Safety fallback — max 4 seconds
-    setTimeout(hidePreloader, 4000);
+    // Safety fallback — max 2.5 seconds
+    setTimeout(hidePreloader, 2500);
 
     // ============================================
     // THEME TOGGLE

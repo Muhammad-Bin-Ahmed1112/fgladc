@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assests/images/FGLADC.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     /* ============================================
        PRELOADER STYLES — Polygon Loader 
@@ -1213,8 +1213,10 @@
       <nav aria-label="Primary navigation">
         <a class="active" href="https://muhammad-bin-ahmed1112.github.io/fgladc">Home</a>
         <a href="#programs">Programs</a>
+
+        <!-- FIX: closed this dropdown div (was previously left open, swallowing everything after it) -->
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle">Faculty <i class="fas fa-chevron-down"></i></a>
+          <a href="#" class="dropdown-toggle">Faculties <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown-menu">
             <a href="#">FSc Pre Medical</a>
             <a href="#">FSc Pre Engineering</a>
@@ -1224,9 +1226,11 @@
             <a href="#">BS English</a>
             <a href="#">BS CS</a>
           </div>
- 
+        </div>
+
         <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/Download">Downloads</a>
         <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/About_Us.html">About</a>
+
         <div class="dropdown">
           <a href="#" class="dropdown-toggle">Faculty <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown-menu">
@@ -1234,6 +1238,7 @@
             <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/Non_Teaching.html">Non Teaching Faculty</a>
           </div>
         </div>
+
         <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/Contact.html">Contact</a>
       </nav>
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="Switch to dark mode" title="Switch theme">
@@ -1532,6 +1537,23 @@
           nav.style.display = '';
         }
       }
+    });
+
+    // ============================================
+    // MOBILE DROPDOWN TOGGLE (NEW — fixes tap-to-open
+    // on touchscreens, since :hover doesn't fire there)
+    // ============================================
+    document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+      toggle.addEventListener('click', function(e) {
+        if (window.innerWidth <= 980) {
+          e.preventDefault();
+          const dropdown = this.closest('.dropdown');
+          document.querySelectorAll('nav .dropdown.open').forEach(function(d) {
+            if (d !== dropdown) d.classList.remove('open');
+          });
+          dropdown.classList.toggle('open');
+        }
+      });
     });
   </script>
 

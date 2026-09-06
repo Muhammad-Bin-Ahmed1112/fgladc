@@ -740,6 +740,11 @@
         color: var(--primary-dark);
       }
 
+      /* Show hamburger menu button on mobile */
+      .menu {
+        display: block !important;
+      }
+
       /* DARK MODE */
       body.dark nav {
         background: #0D0E13;
@@ -771,11 +776,6 @@
         background: #27284A;
         color: #FFFFFF;
       }
-
-      /* Mobile menu button */
-      .menu {
-        display: block;
-      }
     }
 
     /* ============================================
@@ -783,7 +783,7 @@
     ============================================ */
     @media(min-width:981px) {
       .menu {
-        display: none;
+        display: none !important;
       }
     }
 
@@ -893,7 +893,8 @@
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 10px 12px;
-      font-size: 20px
+      font-size: 20px;
+      cursor: pointer;
     }
 
     /* Hero */

@@ -1,4 +1,6 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Downloads</title>
@@ -261,16 +263,6 @@
       background: var(--lavender);
       color: #e9e7ff;
     }
-    .login {
-      background: var(--primary);
-      color: #fff !important;
-      padding: 11px 17px !important;
-      box-shadow: 0 8px 20px rgba(119, 122, 255, .25);
-    }
-    .login:hover {
-      background: var(--primary-dark) !important;
-      color: #fff !important;
-    }
 
     /* Dropdown */
     nav .dropdown {
@@ -281,6 +273,12 @@
       align-items: center;
       gap: 6px;
       cursor: pointer;
+      padding: 10px 13px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #a0a0b0;
+      transition: .2s ease;
     }
     nav .dropdown-toggle i {
       font-size: 10px;
@@ -288,6 +286,10 @@
     }
     nav .dropdown:hover .dropdown-toggle i {
       transform: rotate(180deg);
+    }
+    nav .dropdown-toggle:hover {
+      background: var(--lavender);
+      color: #e9e7ff;
     }
     nav .dropdown-menu {
       position: absolute;
@@ -579,7 +581,7 @@
     }
 
     /* ============================================
-       LIGHT MODE (optional toggle)
+       LIGHT MODE
     ============================================ */
     body.light {
       --bg: #F8F9FC;
@@ -602,6 +604,13 @@
     }
     body.light nav a:hover,
     body.light nav a.active {
+      background: var(--lavender);
+      color: var(--primary-dark);
+    }
+    body.light nav .dropdown-toggle {
+      color: #454957;
+    }
+    body.light nav .dropdown-toggle:hover {
       background: var(--lavender);
       color: var(--primary-dark);
     }
@@ -735,8 +744,22 @@
       nav.open {
         display: flex;
       }
+      nav a,
+      nav .dropdown-toggle {
+        color: var(--text);
+        padding: 10px 14px;
+        border-radius: 10px;
+        width: 100%;
+      }
+      nav a:hover,
+      nav a.active,
+      nav .dropdown-toggle:hover {
+        background: var(--lavender);
+        color: #e9e7ff;
+      }
       nav .dropdown {
         position: static;
+        width: 100%;
       }
       nav .dropdown-menu {
         position: static;
@@ -756,9 +779,21 @@
       nav .dropdown-menu a {
         padding: 8px 16px;
         font-size: 14px;
+        color: var(--text);
+      }
+      nav .dropdown-menu a:hover {
+        background: var(--lavender);
+        color: #e9e7ff;
       }
       body.light nav .dropdown-menu {
         background: transparent;
+      }
+      body.light nav .dropdown-menu a {
+        color: var(--text);
+      }
+      body.light nav .dropdown-menu a:hover {
+        background: var(--lavender);
+        color: var(--primary-dark);
       }
       nav .dropdown-toggle i {
         margin-left: auto;
@@ -869,7 +904,7 @@
   </div>
 
   <!-- ============================================
-  HEADER — UPDATED LINKS
+  HEADER — UPDATED WITH BOTH DROPDOWNS
   ============================================ -->
   <header>
     <div class="container nav">
@@ -880,7 +915,21 @@
 
       <nav aria-label="Primary navigation">
         <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/">Home</a>
-        <a href="#programs">Programs</a>
+        
+        <!-- Programs Dropdown -->
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle">Programs <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="#">FSc Pre Medical</a>
+            <a href="#">FSc Pre Engineering</a>
+            <a href="#">ICS</a>
+            <a href="#">ICS with Stats</a>
+            <a href="#">Humanities</a>
+            <a href="#">BS English</a>
+            <a href="#">BS CS</a>
+          </div>
+        </div>
+
         <a href="#admissions">Admissions</a>
         <a class="active" href="https://muhammad-bin-ahmed1112.github.io/fgladc/Download.html">Downloads</a>
         <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/About_Us.html">About</a>
@@ -895,7 +944,6 @@
         </div>
 
         <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/Contact.html">Contact</a>
-        
       </nav>
 
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="Switch to light mode" title="Switch theme">
@@ -1166,4 +1214,5 @@
     });
   </script>
 
-</body></html>
+</body>
+</html>

@@ -1,11 +1,13 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact Us</title>
   <meta name="description" content="Get in touch with FG Liaquat Ali Degree College, Rawalpindi. Phone, email, and location information.">
 
   <link rel="shortcut icon" href="assests/images/FGLADC.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
 
@@ -255,16 +257,6 @@
       background: var(--lavender);
       color: var(--primary-dark);
     }
-    .login {
-      background: var(--primary);
-      color: #fff !important;
-      padding: 11px 17px !important;
-      box-shadow: 0 8px 20px rgba(91, 95, 239, .25);
-    }
-    .login:hover {
-      background: var(--primary-dark) !important;
-      color: #fff !important;
-    }
 
     /* Dropdown */
     nav .dropdown {
@@ -275,6 +267,12 @@
       align-items: center;
       gap: 6px;
       cursor: pointer;
+      padding: 10px 13px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #454957;
+      transition: .2s ease;
     }
     nav .dropdown-toggle i {
       font-size: 10px;
@@ -282,6 +280,10 @@
     }
     nav .dropdown:hover .dropdown-toggle i {
       transform: rotate(180deg);
+    }
+    nav .dropdown-toggle:hover {
+      background: var(--lavender);
+      color: var(--primary-dark);
     }
     nav .dropdown-menu {
       position: absolute;
@@ -498,7 +500,7 @@
     }
 
     /* ============================================
-       MAP / LOCATION CARD — WITH YOUR EXACT EMBED
+       MAP / LOCATION CARD
     ============================================ */
     .location-card {
       background: var(--surface);
@@ -707,6 +709,13 @@
       background: #27284A;
       color: #E9E7FF;
     }
+    body.dark nav .dropdown-toggle {
+      color: #C8CBD6;
+    }
+    body.dark nav .dropdown-toggle:hover {
+      background: #27284A;
+      color: #E9E7FF;
+    }
     body.dark nav .dropdown-menu {
       background: #171821;
       border-color: var(--border);
@@ -862,8 +871,22 @@
       nav.open {
         display: flex;
       }
+      nav a,
+      nav .dropdown-toggle {
+        color: var(--text);
+        padding: 10px 14px;
+        border-radius: 10px;
+        width: 100%;
+      }
+      nav a:hover,
+      nav a.active,
+      nav .dropdown-toggle:hover {
+        background: var(--lavender);
+        color: var(--primary-dark);
+      }
       nav .dropdown {
         position: static;
+        width: 100%;
       }
       nav .dropdown-menu {
         position: static;
@@ -883,9 +906,21 @@
       nav .dropdown-menu a {
         padding: 8px 16px;
         font-size: 14px;
+        color: var(--text);
+      }
+      nav .dropdown-menu a:hover {
+        background: var(--lavender);
+        color: var(--primary-dark);
       }
       body.dark nav .dropdown-menu {
         background: transparent;
+      }
+      body.dark nav .dropdown-menu a {
+        color: #F0F1F6;
+      }
+      body.dark nav .dropdown-menu a:hover {
+        background: #27284A;
+        color: #E9E7FF;
       }
       nav .dropdown-toggle i {
         margin-left: auto;
@@ -996,7 +1031,7 @@
   </div>
 
   <!-- ============================================
-  HEADER
+  HEADER — UPDATED WITH BOTH DROPDOWNS
   ============================================ -->
   <header>
     <div class="container nav">
@@ -1005,10 +1040,24 @@
         <div class="brand-text">FG Liaquat Ali Degree College<span>Intermediate • Undergraduate</span></div>
       </a>
 
-      <!-- ===== NAVIGATION ===== -->
+      <!-- ===== NAVIGATION WITH BOTH DROPDOWNS ===== -->
       <nav aria-label="Primary navigation">
         <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/">Home</a>
-        <a href="#programs">Programs</a>
+        
+        <!-- Programs Dropdown -->
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle">Programs <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="#">FSc Pre Medical</a>
+            <a href="#">FSc Pre Engineering</a>
+            <a href="#">ICS</a>
+            <a href="#">ICS with Stats</a>
+            <a href="#">Humanities</a>
+            <a href="#">BS English</a>
+            <a href="#">BS CS</a>
+          </div>
+        </div>
+
         <a href="#admissions">Admissions</a>
         <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/Download.html">Downloads</a>
         <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/About_Us.html">About</a>
@@ -1023,7 +1072,6 @@
         </div>
 
         <a class="active" href="https://muhammad-bin-ahmed1112.github.io/fgladc/Contact.html">Contact</a>
-        
       </nav>
 
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="Switch to light mode" title="Switch theme">
@@ -1109,7 +1157,7 @@
 
         </div>
 
-        <!-- ===== RIGHT: MAP WITH YOUR EXACT EMBED ===== -->
+        <!-- ===== RIGHT: MAP ===== -->
         <div class="location-card">
           <div class="map-wrapper">
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3465.5549891892265!2d73.002016!3d33.61103!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df95a6645fe4e5%3A0x4fca042c6b239a43!2sF.G%20Liaquat%20Ali%20Degree%20College!5e1!3m2!1sen!2s!4v1788624677055!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
@@ -1280,4 +1328,5 @@
     });
   </script>
 
-</body></html>
+</body>
+</html>

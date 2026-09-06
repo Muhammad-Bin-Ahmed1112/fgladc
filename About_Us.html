@@ -1,4 +1,6 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About the College</title>
@@ -257,8 +259,7 @@
       background: var(--lavender);
       color: var(--primary-dark);
     }
-   
-   
+
     /* Dropdown */
     nav .dropdown {
       position: relative;
@@ -268,6 +269,12 @@
       align-items: center;
       gap: 6px;
       cursor: pointer;
+      padding: 10px 13px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #454957;
+      transition: .2s ease;
     }
     nav .dropdown-toggle i {
       font-size: 10px;
@@ -275,6 +282,10 @@
     }
     nav .dropdown:hover .dropdown-toggle i {
       transform: rotate(180deg);
+    }
+    nav .dropdown-toggle:hover {
+      background: var(--lavender);
+      color: var(--primary-dark);
     }
     nav .dropdown-menu {
       position: absolute;
@@ -686,6 +697,13 @@
       background: #27284A;
       color: #E9E7FF;
     }
+    body.dark nav .dropdown-toggle {
+      color: #C8CBD6;
+    }
+    body.dark nav .dropdown-toggle:hover {
+      background: #27284A;
+      color: #E9E7FF;
+    }
     body.dark nav .dropdown-menu {
       background: #171821;
       border-color: var(--border);
@@ -822,8 +840,22 @@
       nav.open {
         display: flex;
       }
+      nav a,
+      nav .dropdown-toggle {
+        color: var(--text);
+        padding: 10px 14px;
+        border-radius: 10px;
+        width: 100%;
+      }
+      nav a:hover,
+      nav a.active,
+      nav .dropdown-toggle:hover {
+        background: var(--lavender);
+        color: var(--primary-dark);
+      }
       nav .dropdown {
         position: static;
+        width: 100%;
       }
       nav .dropdown-menu {
         position: static;
@@ -843,9 +875,21 @@
       nav .dropdown-menu a {
         padding: 8px 16px;
         font-size: 14px;
+        color: var(--text);
+      }
+      nav .dropdown-menu a:hover {
+        background: var(--lavender);
+        color: var(--primary-dark);
       }
       body.dark nav .dropdown-menu {
         background: transparent;
+      }
+      body.dark nav .dropdown-menu a {
+        color: #F0F1F6;
+      }
+      body.dark nav .dropdown-menu a:hover {
+        background: #27284A;
+        color: #E9E7FF;
       }
       nav .dropdown-toggle i {
         margin-left: auto;
@@ -959,7 +1003,7 @@
   </div>
 
   <!-- ============================================
-  HEADER — UPDATED LINKS
+  HEADER — UPDATED WITH BOTH DROPDOWNS
   ============================================ -->
   <header>
     <div class="container nav">
@@ -970,7 +1014,21 @@
 
       <nav aria-label="Primary navigation">
         <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/">Home</a>
-        <a href="#programs">Programs</a>
+        
+        <!-- Programs Dropdown -->
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle">Programs <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="#">FSc Pre Medical</a>
+            <a href="#">FSc Pre Engineering</a>
+            <a href="#">ICS</a>
+            <a href="#">ICS with Stats</a>
+            <a href="#">Humanities</a>
+            <a href="#">BS English</a>
+            <a href="#">BS CS</a>
+          </div>
+        </div>
+
         <a href="#admissions">Admissions</a>
         <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/Download.html">Downloads</a>
         <a class="active" href="https://muhammad-bin-ahmed1112.github.io/fgladc/About_Us.html">About</a>
@@ -985,7 +1043,6 @@
         </div>
 
         <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/Contact.html">Contact</a>
-     
       </nav>
 
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="Switch to light mode" title="Switch theme">
@@ -1127,7 +1184,15 @@
         </article>
 
         <!-- ===== CTA BANNER ===== -->
-        
+        <div class="cta-banner">
+          <div>
+            <h2>Ready to Join?</h2>
+            <p>Take the next step toward a bright future at FG Liaquat Ali Degree College.</p>
+          </div>
+          <a href="https://muhammad-bin-ahmed1112.github.io/fgladc/#admissions" class="btn-lime">
+            <i class="fas fa-arrow-right"></i> Apply Now
+          </a>
+        </div>
 
       </div>
     </div>
@@ -1259,4 +1324,5 @@
     });
   </script>
 
-</body></html>
+</body>
+</html>

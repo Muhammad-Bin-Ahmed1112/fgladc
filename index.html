@@ -8,10 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <style>
     /* ============================================
        PRELOADER STYLES — Polygon Loader 
-       Instantly visible, hides on page load
     ============================================ */
     
     html, body {
@@ -50,7 +53,6 @@
       pointer-events: none;
     }
 
-    /* Polygon Loader - Blue & Lime theme */
     .polygon-loader {
       display: inline-grid;
       width: 90px;
@@ -85,7 +87,6 @@
       }
     }
 
-    /* Loader text */
     #preloader .loader-text {
       margin-top: 30px;
       font-family: "Space Grotesk", sans-serif;
@@ -96,13 +97,225 @@
       text-transform: uppercase;
     }
 
-    /* Light theme preloader */
     body:not(.dark) #preloader {
       background: #F8F9FC;
     }
 
     body:not(.dark) #preloader .loader-text {
       color: #171821;
+    }
+
+    /* ============================================
+       POPUP / MODAL STYLES
+    ============================================ */
+    .popup-overlay {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+      padding: 20px;
+    }
+
+    .popup-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .popup-modal {
+      background: #FFFFFF;
+      border-radius: 28px;
+      max-width: 560px;
+      width: 100%;
+      padding: 50px 45px 45px;
+      position: relative;
+      transform: scale(0.9) translateY(30px);
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease;
+      opacity: 0;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+      text-align: center;
+    }
+
+    .popup-overlay.active .popup-modal {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+
+    /* Close button */
+    .popup-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #999;
+      cursor: pointer;
+      transition: color 0.2s ease, transform 0.2s ease;
+      padding: 4px 8px;
+      line-height: 1;
+    }
+
+    .popup-close:hover {
+      color: #333;
+      transform: rotate(90deg);
+    }
+
+    body.dark .popup-close {
+      color: #888;
+    }
+
+    body.dark .popup-close:hover {
+      color: #fff;
+    }
+
+    /* Popup badge / icon */
+    .popup-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--primary);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .popup-badge i {
+      font-size: 16px;
+    }
+
+    .popup-modal .popup-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--lavender);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 36px;
+      color: var(--primary);
+    }
+
+    body.dark .popup-modal .popup-icon {
+      background: #27284A;
+    }
+
+    .popup-modal h2 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin: 0 0 8px;
+      color: var(--text);
+    }
+
+    .popup-modal .popup-date {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 5px 0 15px;
+      letter-spacing: -0.02em;
+    }
+
+    .popup-modal .popup-sub {
+      font-size: 16px;
+      color: var(--muted);
+      margin: 0 0 25px;
+      line-height: 1.6;
+    }
+
+    .popup-modal .popup-sub strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .popup-modal .popup-divider {
+      width: 60px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 999px;
+      margin: 0 auto 20px;
+    }
+
+    .popup-modal .popup-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 14px 35px;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+      box-shadow: 0 12px 30px rgba(91, 95, 239, 0.3);
+    }
+
+    .popup-modal .popup-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Dark mode popup */
+    body.dark .popup-modal {
+      background: #171821;
+    }
+
+    body.dark .popup-modal h2 {
+      color: #F0F1F6;
+    }
+
+    body.dark .popup-modal .popup-sub {
+      color: #A8ACB9;
+    }
+
+    body.dark .popup-modal .popup-sub strong {
+      color: #F0F1F6;
+    }
+
+    /* Responsive */
+    @media (max-width: 620px) {
+      .popup-modal {
+        padding: 35px 25px 30px;
+      }
+
+      .popup-modal h2 {
+        font-size: 26px;
+      }
+
+      .popup-modal .popup-date {
+        font-size: 36px;
+      }
+
+      .popup-modal .popup-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+      }
+
+      .popup-modal .popup-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+      }
     }
 
     /* ============================================
@@ -218,7 +431,6 @@
       border-radius: 0 0 14px 14px;
     }
 
-    /* Dark mode dropdown */
     body.dark nav .dropdown-menu {
       background: #171821;
       border-color: var(--border);
@@ -1096,7 +1308,6 @@
       border-color: #777AFF;
     }
 
-    /* Theme toggle */
     .theme-toggle {
       width: 44px;
       height: 44px;
@@ -1212,6 +1423,50 @@
   <div id="preloader">
     <div class="polygon-loader"></div>
     <div class="loader-text">Loading</div>
+  </div>
+
+  <!-- ============================================
+  POPUP / MODAL — Commencement Announcement
+  ============================================ -->
+  <div class="popup-overlay" id="commencementPopup">
+    <div class="popup-modal">
+      <!-- Close Button -->
+      <button class="popup-close" onclick="closePopup()" aria-label="Close announcement">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <!-- Icon -->
+      <div class="popup-icon">
+        <i class="fas fa-calendar-check"></i>
+      </div>
+
+      <!-- Badge -->
+      <div class="popup-badge">
+        <i class="fas fa-bullhorn"></i> Important Announcement
+      </div>
+
+      <!-- Title -->
+      <h2>COMMENCEMENT OF <br>XI (FIRST YEAR)</h2>
+
+      <!-- Date -->
+      <div class="popup-date">Tuesday, 08 September</div>
+
+      <!-- Divider -->
+      <div class="popup-divider"></div>
+
+      <!-- Description -->
+      <p class="popup-sub">
+        <strong>XI (FIRST YEAR) CLASSES</strong> will start on 
+        <strong>Tuesday, 08 September</strong> for the students 
+        who have completed their admission requirements and 
+        paid the college fees.
+      </p>
+
+      <!-- Action Button -->
+      <button class="popup-btn" onclick="closePopup()">
+        <i class="fas fa-check-circle"></i> Got it, Thanks!
+      </button>
+    </div>
   </div>
 
   <!-- ============================================
@@ -1484,8 +1739,37 @@
 
   <script>
     // ============================================
+    // POPUP / MODAL FUNCTIONS
+    // ============================================
+    function showPopup() {
+      const overlay = document.getElementById('commencementPopup');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    function closePopup() {
+      const overlay = document.getElementById('commencementPopup');
+      overlay.classList.remove('active');
+      document.body.style.overflow = ''; // Restore scrolling
+    }
+
+    // Close popup when clicking outside the modal
+    document.addEventListener('click', function(event) {
+      const overlay = document.getElementById('commencementPopup');
+      if (event.target === overlay) {
+        closePopup();
+      }
+    });
+
+    // Close popup with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closePopup();
+      }
+    });
+
+    // ============================================
     // PRELOADER — Hides exactly when page loads
-    // No minimum time, just page load
     // ============================================
     
     let preloaderHidden = false;
@@ -1501,6 +1785,8 @@
 
       setTimeout(() => {
         preloader.style.display = 'none';
+        // Show popup AFTER preloader is hidden
+        showPopup();
       }, 700);
     }
 
@@ -1509,7 +1795,7 @@
       hidePreloader();
     });
 
-    // Safety fallback — max 5 seconds (in case load event doesn't fire)
+    // Safety fallback — max 5 seconds
     setTimeout(hidePreloader, 5000);
 
     // ============================================
@@ -1565,7 +1851,6 @@
         toggle.addEventListener('click', function(e) {
           e.preventDefault();
           
-          // Only handle on mobile (when nav is in flex column mode)
           const nav = document.querySelector('nav');
           if (window.innerWidth <= 980 && nav.style.display === 'flex') {
             const dropdown = this.closest('.dropdown');
@@ -1581,7 +1866,6 @@
       if (nav && nav.style.display === 'flex') {
         if (!nav.contains(event.target) && !menuBtn.contains(event.target)) {
           nav.style.display = '';
-          // Close any open dropdowns on mobile
           document.querySelectorAll('nav .dropdown.open').forEach(function(dropdown) {
             dropdown.classList.remove('open');
           });
@@ -1589,7 +1873,6 @@
       }
     });
 
-    // Handle window resize - close mobile menu on desktop
     window.addEventListener('resize', function() {
       const nav = document.querySelector('nav');
       if (window.innerWidth > 980 && nav) {

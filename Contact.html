@@ -123,6 +123,9 @@
       --radius-sm: 12px;
       --max: 1180px;
       --marquee-color: #d72d32;
+      /* TikTok brand colors */
+      --tiktok-purple: #25F4EE;
+      --tiktok-red: #FE2C55;
     }
 
     * {
@@ -558,7 +561,7 @@
     }
 
     /* ============================================
-       SOCIAL LINKS SECTION (UPDATED)
+       SOCIAL LINKS SECTION — TikTok Purple/Red CSS
     ============================================ */
     .social-section {
       margin-top: 36px;
@@ -616,21 +619,24 @@
       box-shadow: var(--shadow-lg);
       border-color: var(--primary);
     }
-    /* Custom brand hover colors */
+    /* Facebook hover */
     .social-links a.facebook:hover {
       background: #1877F2;
       color: #fff;
       border-color: #1877F2;
     }
+    /* YouTube hover */
     .social-links a.youtube:hover {
       background: #FF0000;
       color: #fff;
       border-color: #FF0000;
     }
+    /* TikTok hover — Purple & Red gradient */
     .social-links a.tiktok:hover {
-      background: #000;
+      background: linear-gradient(135deg, #25F4EE 0%, #FE2C55 100%);
       color: #fff;
-      border-color: #000;
+      border-color: #FE2C55;
+      box-shadow: 0 8px 24px rgba(254, 44, 85, 0.35);
     }
 
     /* ============================================
@@ -1172,7 +1178,7 @@
       </div>
 
       <!-- ============================================
-      SOCIAL LINKS — UPDATED WITH YOUR LINKS
+      SOCIAL LINKS — TikTok Purple/Red gradient on hover
       ============================================ -->
       <div class="social-section">
         <div class="section-label">🌐 Connect With Us</div>
@@ -1180,15 +1186,15 @@
         <p>Stay updated with the latest news, events, and announcements from FGLADC.</p>
 
         <div class="social-links">
-          <!-- Facebook: your provided link -->
+          <!-- Facebook -->
           <a href="https://www.facebook.com/profile.php?id=100011315348037" class="facebook" target="_blank">
             <i class="fab fa-facebook-f"></i> Facebook
           </a>
-          <!-- YouTube: your provided link -->
+          <!-- YouTube -->
           <a href="https://www.youtube.com/@ExpertsComputerAcademy/" class="youtube" target="_blank">
             <i class="fab fa-youtube"></i> YouTube
           </a>
-          <!-- TikTok: your provided link -->
+          <!-- TikTok — Purple & Red gradient on hover -->
           <a href="https://www.tiktok.com/@experts_computer_academy" class="tiktok" target="_blank">
             <i class="fab fa-tiktok"></i> TikTok
           </a>
